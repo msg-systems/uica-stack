@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.1.1",
+    "version":     "0.1.2",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -24,7 +24,7 @@
         "url":  "https://github.com/msg-systems/msg-js-spa-framework/issues"
     },
     "dependencies": {
-        "delivery-packer":      "0.1.0",
+        "delivery-packer":      "0.1.1",
         "lodash":               "4.5.1",
         "jquery":               "2.2.1",
         "console-polyfill":     "0.2.2",
@@ -34,7 +34,7 @@
         "moment":               "2.11.2",
         "numeral":              "1.5.3",
         "componentjs":          "1.2.7",
-        "datamodeljs":          "1.2.1",
+        "datamodeljs":          "1.2.2",
         "normalize.css":        "3.0.3",
         "mousetrap":            "1.5.3",
         "i18next":              "2.2.0",

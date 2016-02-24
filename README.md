@@ -168,7 +168,7 @@ In order to build up a library stack that covers most of the applications need w
 	<td>Business datamodel</td>
 	<td>JS</td>
 	<td><a href='https://www.npmjs.com/package/datamodeljs'><img src="https://nodei.co/npm/datamodeljs.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.2.1</td>
+	<td>1.2.2</td>
   </tr>
 </tbody>
 </table>
