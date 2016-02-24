@@ -1,4 +1,4 @@
 /.idea
 /bld
 /node_modules
-/lib/modernizr
+/lib/modernizr/modernizr.js
