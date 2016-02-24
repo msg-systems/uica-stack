@@ -1,0 +1,27 @@
+##
+##  msg JavaScript Single Page App Framework - deliveryPacker config file
+##  Design and Development by msg Applied Technology Research
+##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
+##
+register:
+  spa-fw.componentjs:
+    JS:
+    - ../../node_modules/componentjs/component.js
+    - ../../src/app/fw/abstract/abstract-ctrl.js
+    - ../../src/app/fw/abstract/abstract-model.js
+    - ../../src/app/fw/abstract/abstract-view.js
+  spa-fw.componentjs.debugger:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.debugger.js
+  spa-fw.componentjs.jquery:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.jquery.js
+  spa-fw.componentjs.localstorage:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.localstorage.js
+  spa-fw.componentjs.values:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.values.js
+  spa-fw.componentjs.testdrive:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.testdrive.js

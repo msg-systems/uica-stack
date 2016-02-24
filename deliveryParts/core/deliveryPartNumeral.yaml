@@ -1,0 +1,10 @@
+##
+##  msg JavaScript Single Page App Framework - deliveryPacker config file
+##  Design and Development by msg Applied Technology Research
+##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
+##
+register:
+  spa-fw.numeral:
+    JS:
+    - ../../node_modules/numeral/numeral.js
+    - ../../node_modules/numeral/languages/de.js

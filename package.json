@@ -1,0 +1,50 @@
+{
+    "name":        "msg-js-spa-framework",
+    "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
+    "description": "JavaScript Single Page App Framework",
+    "version":     "0.1.0",
+    "license":     "MIT",
+    "author": {
+        "name":    "Jochen Hoertreiter",
+        "email":   "jochen.hoertreiter@googlemail.com",
+        "url":     "https://github.com/msg-systems"
+    },
+    "keywords": [
+        "single",
+        "page",
+        "app",
+        "spa",
+        "framework"
+    ],
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/msg-systems/msg-js-spa-framework.git"
+    },
+    "bugs": {
+        "url":  "https://github.com/msg-systems/msg-js-spa-framework/issues"
+    },
+    "dependencies": {
+        "delivery-packer":      "0.1.0",
+        "lodash":               "4.5.1",
+        "jquery":               "2.2.1",
+        "console-polyfill":     "0.2.2",
+        "es5-shim":             "4.5.5",
+        "json-js":              "1.1.2",
+        "Base64":               "0.3.0",
+        "moment":               "2.11.2",
+        "numeral":              "1.5.3",
+        "componentjs":          "1.2.7",
+        "datamodeljs":          "1.2.1",
+        "normalize.css":        "3.0.3",
+        "mousetrap":            "1.5.3",
+        "i18next":              "2.2.0",
+        "jquery-i18next":       "0.0.14",
+        "modernizr":            "3.3.1"
+    },
+    "engines": {
+        "node":                 ">=0.10.0"
+    },
+    "scripts": {
+        "postinstall": "./node_modules/.bin/modernizr -c ./node_modules/modernizr/lib/config-all.json -d ./lib/modernizr/modernizr.js"
+    }
+}
