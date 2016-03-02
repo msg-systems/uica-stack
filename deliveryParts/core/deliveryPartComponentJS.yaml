@@ -10,6 +10,11 @@ register:
     - ../../src/app/fw/abstract/abstract-ctrl.js
     - ../../src/app/fw/abstract/abstract-model.js
     - ../../src/app/fw/abstract/abstract-view.js
+    - ../../src/app/fw/_trait/root/service/service-ctrl.js
+    - ../../src/app/fw/root/abstractRoot-ctrl.js
+    - ../../src/app/fw/root/abstractRoot-model.js
+    - ../../src/app/fw/root/abstractRoot-view.js
+    - ../../src/app/fw/sv/abstractSV.js
   spa-fw.componentjs.debugger:
     JS:
     - ../../node_modules/componentjs/component.plugin.debugger.js
