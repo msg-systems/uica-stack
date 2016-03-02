@@ -29,7 +29,7 @@ app.fw.abstract.view = ComponentJS.clazz({
 
         render: function () {
             var self = this;
-            self.ui = $.markup(self.markupName, self.markupParams).i18n();
+            self.ui = $.markup(self.markupName, self.markupParams).localize();
             self.prepareMaskReferences();
             self.prepareMaskRendering();
             self.registerCommandBindings();
