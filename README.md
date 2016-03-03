@@ -88,7 +88,7 @@ In order to build up a library stack that covers most of the applications need w
   <tr>
 	<td>JS</td>	
 	<td><a href='https://www.npmjs.com/package/es5-shim'><img src="https://nodei.co/npm/es5-shim.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.5.5</td>
+	<td>4.5.7</td>
   </tr>
   <tr>
 	<td>JS</td>	
@@ -121,7 +121,7 @@ In order to build up a library stack that covers most of the applications need w
 	<td>Array handling</td>
 	<td>JS</td>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.5.1</td>
+	<td>4.6.1</td>
   </tr>
   <tr>
 	<td rowspan="4">Internationalization</td>
@@ -169,6 +169,24 @@ In order to build up a library stack that covers most of the applications need w
 	<td>JS</td>
 	<td><a href='https://www.npmjs.com/package/datamodeljs'><img src="https://nodei.co/npm/datamodeljs.png?downloads=true&stars=true" alt=""/></a></td>
 	<td>1.2.5</td>
+  </tr>
+  <tr>
+	<td>Handlebars</td>
+	<td>JS</td>
+	<td><a href='https://www.npmjs.com/package/handlebars'><img src="https://nodei.co/npm/handlebars.png?downloads=true&stars=true" alt=""/></a></td>
+	<td>4.0.5</td>
+  </tr>
+  <tr>
+	<td>jQuery Markup</td>
+	<td>JS</td>
+	<td><a href='https://www.npmjs.com/package/jquery-markup'><img src="https://nodei.co/npm/jquery-markup.png?downloads=true&stars=true" alt=""/></a></td>
+	<td>1.0.35</td>
+  </tr>
+  <tr>
+	<td>Bootstrap</td>
+	<td>JS</td>
+	<td><a href='https://www.npmjs.com/package/bootstrap'><img src="https://nodei.co/npm/bootstrap.png?downloads=true&stars=true" alt=""/></a></td>
+	<td>3.3.6</td>
   </tr>
 </tbody>
 </table>

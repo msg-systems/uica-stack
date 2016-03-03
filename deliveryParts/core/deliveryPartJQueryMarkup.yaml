@@ -1,0 +1,4 @@
+register:
+  spa-fw.jqueryMarkup:
+    JS:
+    - ../../node_modules/jquery-markup/jquery.markup.js

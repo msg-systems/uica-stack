@@ -1,0 +1,4 @@
+register:
+  spa-fw.handlebars:
+    JS:
+    - ../../node_modules/handlebars/dist/handlebars.js
