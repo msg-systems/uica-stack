@@ -1,0 +1,4 @@
+html.hidden {
+    display: inherit !important;
+    visibility: inherit !important;
+}

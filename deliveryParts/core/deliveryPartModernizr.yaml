@@ -7,3 +7,5 @@ register:
   spa-fw.modernizr:
     JS:
     - ../../lib/modernizr/modernizr.js
+    CSS:
+    - ../../lib/modernizr/modernizr.css
