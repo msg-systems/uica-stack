@@ -10,3 +10,9 @@ register:
   spa-fw.i18next-jquery:
     JS:
     - ../../node_modules/jquery-i18next/i18next-jquery.min.js
+  spa-fw.i18next-xhr-backend:
+    JS:
+    - ../../node_modules/i18next-xhr-backend/i18nextXHRBackend.min.js
+  spa-fw.i18next-root-trait:
+    JS:
+    - ../../src/app/fw/_trait/root/i18next/i18next-ctrl.js
