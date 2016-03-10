@@ -6,13 +6,13 @@
 register:
   spa-fw.i18next:
     JS:
-    - ../../node_modules/i18next/i18next.min.js
+    - ../../node_modules/i18next/i18next.js
   spa-fw.i18next-jquery:
     JS:
-    - ../../node_modules/jquery-i18next/i18next-jquery.min.js
+    - ../../node_modules/jquery-i18next/jquery-i18next.js
   spa-fw.i18next-xhr-backend:
     JS:
-    - ../../node_modules/i18next-xhr-backend/i18nextXHRBackend.min.js
+    - ../../node_modules/i18next-xhr-backend/i18nextXHRBackend.js
   spa-fw.i18next-root-trait:
     JS:
     - ../../src/app/fw/_trait/root/i18next/i18next-ctrl.js
