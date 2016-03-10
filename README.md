@@ -55,7 +55,7 @@ Creating an UI Application typically considers all functional requirements and t
 
 Typical functional requirements and a possible layer concept as a technical view will be detailed further below. 
 
-### UI functional requirements
+### Functional requirements
 Single page applications face alot of functional requirements like:
 
 - DOM-Manipulation
