@@ -23,6 +23,7 @@ build:
 - spa-fw.moment
 - spa-fw.numeral
 - spa-fw.mousetrap
+- spa-fw.hammerjs
 - spa-fw.componentjs
 - spa-fw.componentjs.debugger
 - spa-fw.componentjs.jquery
@@ -32,17 +33,6 @@ build:
 - spa-fw.i18next-root-trait
 - spa-fw.handlebars
 - spa-fw.jqueryMarkup
-- spa-fw.bootstrap
-- spa-fw.bootstrap.transition
-- spa-fw.bootstrap.alert
-- spa-fw.bootstrap.button
-- spa-fw.bootstrap.carousel
-- spa-fw.bootstrap.collapse
-- spa-fw.bootstrap.dropdown
-- spa-fw.bootstrap.modal
-- spa-fw.bootstrap.tooltip
-- spa-fw.bootstrap.popover
-- spa-fw.bootstrap.scrollspy
-- spa-fw.bootstrap.tab
-- spa-fw.bootstrap.affix
+- spa-fw.qwest
+- spa.fw.socket.io-client
 - datamodeljs
