@@ -23,7 +23,7 @@ app.fw.trait.root.i18next.ctrl = ComponentJS.trait({
                 console.error("Please overwrite the method \"userLanguage\" in the component ", ComponentJS(this).name(), " when you include the trait \"app.fw.trait.root.i18next\"");
             }
             try {
-                i18nextJquery.init(i18next, $);
+                jqueryI18next.init(i18next, $);
                 i18next
                     .use(i18nextXHRBackend)
                     .init({

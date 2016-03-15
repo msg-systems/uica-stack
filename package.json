@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.1.11",
+    "version":     "0.1.12",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
