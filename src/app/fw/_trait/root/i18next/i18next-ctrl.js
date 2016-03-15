@@ -30,7 +30,7 @@ app.fw.trait.root.i18next.ctrl = ComponentJS.trait({
                         preload: ['de', 'en'],
                         lng: userLanguage,
                         fallbackLng: 'de',
-                        debug: true,
+                        debug: false,
                         backend: {
                             loadPath: self.resourcePath
                         }
