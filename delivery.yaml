@@ -13,6 +13,7 @@ build:
 - spa-fw.es5-sham
 - spa-fw.json-polyfill
 - spa-fw.base64-polyfill
+- spa-fw.htmlencode
 - spa-fw.normalize.css
 - spa-fw.modernizr
 - spa-fw.jquery
