@@ -1,3 +1,13 @@
+// make sure required artefacts are loaded
+if (typeof i18next === "undefined") {
+    throw "This trait 'i18next' for internationalization requires i18next to be loaded"
+}
+if (typeof jqueryI18next === "undefined") {
+    throw "This trait 'i18next' for internationalization requires jqueryI18next to be loaded"
+}
+if (typeof i18nextXHRBackend === "undefined") {
+    throw "This trait 'i18next' for internationalization requires i18nextXHRBackend to be loaded"
+}
 ComponentJS.ns('app.fw.trait.root.i18next');
 app.fw.trait.root.i18next.ctrl = ComponentJS.trait({
     dynamics: {

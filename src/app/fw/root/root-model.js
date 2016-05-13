@@ -1,5 +1,5 @@
-ComponentJS.ns("app.fw.abstractRoot");
-app.fw.abstractRoot.model = ComponentJS.clazz({
+ComponentJS.ns("app.fw.root");
+app.fw.root.model = ComponentJS.clazz({
     extend: app.fw.abstract.model,
     dynamics: {},
     protos: {

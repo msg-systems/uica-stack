@@ -1,0 +1,4 @@
+URL:        http://lesselements.com
+Version:    0.9
+Author:     Dmitry Fadeyev
+License:    Public Domain

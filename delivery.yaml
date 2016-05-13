@@ -31,9 +31,13 @@ build:
 - spa-fw.componentjs.localstorage
 - spa-fw.componentjs.values
 - spa-fw.componentjs.testdrive
-- spa-fw.i18next-root-trait
+- spa-fw.trait.registerAPIViewWrapper
+- spa-fw.trait.serviceError
+- spa-fw.trait.i18next
+- spa-fw.componentjs.abstractComponents
 - spa-fw.handlebars
 - spa-fw.jqueryMarkup
 - spa-fw.qwest
 - spa-fw.socket.io-client
+- spa-fw.sprintfjs
 - datamodeljs

@@ -9,8 +9,11 @@ app.fw.sv = ComponentJS.clazz({
         requestCounter: 0,
         serviceRoot: '',
         userHeader: null,
+        userHeaderName: "appuser",
         requestHeaderId: "X-REQUEST-ID",
-        messageId: "appService.error.parse"
+        messageId: "appService.error.parse",
+        // this can be overwritten - if needed - of a service that extends from this service clazz
+        defaultServiceOptions: {dataType: 'json'}
     },
     protos: {
 
@@ -51,36 +54,46 @@ app.fw.sv = ComponentJS.clazz({
                 func: function () {
                     app.log("Backend Service - " + serviceName);
                     var result = serviceFunction.apply(self, arguments);
-                    var header = result.header || {};
-                    header[self.requestHeaderId] = btoa(moment().valueOf() + serviceName + self.requestCounter);
-                    if (self.userHeader) header.appuser = self.userHeader;
+                    var options = result.options || {};
+                    options = _.assign(self.defaultServiceOptions, options);
+                    var headers = options.headers || {};
+                    headers[self.requestHeaderId] = btoa(moment().valueOf() + serviceName + self.requestCounter);
+                    if (self.userHeader) headers[self.userHeaderName] = self.userHeader;
+                    options.headers = headers;
                     self.requestCounter++;
-                    promise
-                        .ajax(methodName, result.serviceURL, result.data || {}, header)
-                        .then(function (error, text, xhr) {
+                    qwest.setDefaultOptions(options);
+                    var method = methodName.toLowerCase();
+                    qwest[method](result.serviceURL, result.data || {})
+                        .then(function (xhr) {
+                            var text = xhr.responseText;
                             if (callbackFunction)
-                                callbackFunction(error, text, xhr, result.callback);
+                                callbackFunction(null, text, xhr, result.callback);
                             else {
-                                if (error) {
-                                    // this error happens if the response has status < 200 or >= 300, but not 304
-                                    self.handleTechnicalError(text, xhr, result.callback);
-                                } else {
-                                    try {
-                                        var objs = text.length > 0 ? JSON.parse(text) : {};
-                                        if (self.hasError(objs)) {
-                                            self.handleFunctionalError(objs, result.callback);
-                                        } else {
-                                            result.callback(self.SUCCESS, objs);
-                                        }
-                                    } catch (e) {
-                                        console.log(e.message);
-                                        // technical it is an error as well, if the response couldn't be parsed
-                                        result.callback(false, {
-                                            messageId: self.messageId,
-                                            messageParams: []
-                                        }, false);
+                                try {
+                                    var objs = text.length > 0 ? JSON.parse(text) : {};
+                                    if (self.hasError(objs)) {
+                                        self.handleFunctionalError(objs, result.callback);
+                                    } else {
+                                        result.callback(self.SUCCESS, objs);
                                     }
+                                } catch (e) {
+                                    console.log(e.message);
+                                    // technical it is an error as well, if the response couldn't be parsed
+                                    result.callback(false, {
+                                        messageId: self.messageId,
+                                        messageParams: []
+                                    }, false);
                                 }
+                            }
+                        })
+                        .catch(function (e, xhr) {
+                            var text = xhr.responseText;
+                            // Process the error
+                            if (callbackFunction)
+                                callbackFunction(e, text, xhr, result.callback);
+                            else {
+                                // this error happens if the response has status < 200 or >= 300, but not 304
+                                self.handleTechnicalError(text, xhr, result.callback);
                             }
                         });
                 }

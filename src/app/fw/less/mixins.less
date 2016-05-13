@@ -1,0 +1,51 @@
+@import "../../../../lib/less/elements.less";
+
+.fluid() {
+    height: 100%;
+    width: 100%;
+}
+
+.calcHeight(@height: 100%) {
+    height: -webkit-calc(@height);
+    height: -moz-calc(@height);
+    height: calc(@height);
+}
+
+.calcImportantHeight(@height: 100%) {
+    height: -webkit-calc(@height) !important;
+    height: -moz-calc(@height) !important;
+    height: calc(@height) !important;
+}
+
+.calcMaxHeight(@maxheight: 100%) {
+    max-height: -webkit-calc(@maxheight);
+    max-height: -moz-calc(@maxheight);
+    max-height: calc(@maxheight);
+}
+
+.calcWidth(@width: 100%) {
+    width: -webkit-calc(@width);
+    width: -moz-calc(@width);
+    width: calc(@width);
+}
+
+.calcLeft(@left: 0%) {
+    left: -webkit-calc(@left);
+    left: -moz-calc(@left);
+    left: calc(@left);
+}
+
+.calcTop(@top: 0%) {
+    top: -webkit-calc(@top);
+    top: -moz-calc(@top);
+    top: calc(@top);
+}
+
+//Anwendung: .transition-properties(~"width 0.3s ease-out 0s");
+.transition-properties(@arguments) {
+    -webkit-transition: @arguments;
+    -moz-transition: @arguments;
+    -o-transition: @arguments;
+    -ms-transition: @arguments;
+    transition: @arguments;
+}

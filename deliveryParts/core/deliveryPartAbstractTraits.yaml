@@ -1,0 +1,12 @@
+##
+##  msg JavaScript Single Page App Framework - deliveryPacker config file
+##  Design and Development by msg Applied Technology Research
+##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
+##
+register:
+  spa-fw.trait.registerAPIViewWrapper:
+    JS:
+    - ../../src/app/fw/_trait/abstract/registerAPI/registerAPI-view.js
+  spa-fw.trait.serviceError:
+    JS:
+    - ../../src/app/fw/_trait/abstract/serviceError/serviceError-ctrl.js

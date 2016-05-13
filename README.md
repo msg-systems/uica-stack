@@ -256,13 +256,8 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/componentjs'><img src="https://nodei.co/npm/componentjs.png?downloads=true&stars=true" alt=""/></a><br>
-	Additionally abstract classes for ComponentJS are provided<br>
-	<ul>
-	<li>controller: app.fw.abstract.ctrl</li>
-	<li>model: app.fw.abstract.model</li>
-	<li>view: app.fw.abstract.view</li>
-	</ul>
-	All of them provide an abstract layer for work with ComponentJS.
+	Additionally abstract classes and traits for ComponentJS are provided.<br>
+	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
 	<td>1.2.7</td>
 	<td>JS</td>
@@ -287,3 +282,105 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	<td>12. Backend Communication - WebSockets</td>
   </tr></tbody>
 </table>
+
+<h2 id="abstractClasses">Standard set of abstract classes, traits and components</h2>
+
+Next to the libraries and frameworks the `msg-js-spa-framework` provides abstract classes, traits (mixins) and components.
+
+### abstract classes
+
+For each part of a component (controller, model and view) a abstract class is provided. They represent an abstract layer to work with ComponentJS. Every component must extend from this abstract class.
+
+<ul>
+<li>controller: app.fw.abstract.ctrl</li>
+<li>model: app.fw.abstract.model</li>
+<li>view: app.fw.abstract.view</li>
+</ul>
+
+
+### traits
+The `msg-js-spa-framework` provides some helpful traits. Some of them are already mixed in in the components of the `msg-js-spa-framework`, some can be mixed in to your specific components, if needed. 
+
+#### i18next
+This trait handles the loading of the i18next-keys from the backend. By default this trait is included by the root-component.
+
+The default value for the resourcePath is 'app/{{lng}}-translation.json', but can be overwritten from the specific root component of your application.
+
+The specific root component must implement the function 'userLanguage' to return the current language of the application.
+<ul>
+<li>controller: app.fw.trait.root.i18next.ctrl</li>
+</ul>
+
+#### serviceError
+The default error handling callback for service methods is available through mixing in this trait. It is already mixed in the root-component and in the abstract component. So the of the error handling is taking care due extending from this components.
+
+<ul>
+<li>controller: app.fw.trait.abstract.serviceError.ctrl</li>
+</ul>
+
+When the result object is an error object, this method takes care of the error analysis and it creates the proper messages and throws it to the top level error handler with publish("fw:handleError"). To react to the error, the event "fw:handleError" must be subscribed.
+
+
+#### registerAPI
+Sometimes it is neccassary that the controller can asked its view about a markup. If that is needed, this trait must be mixed in, to the specific view.
+Generally a Controller should only call a registered method of the view to get a views markup.
+
+<ul>
+<li>view: app.fw.trait.abstract.registerAPI.view</li>
+</ul>
+
+
+### components
+Each application needs a service and a root component. The `msg-js-spa-framework` provides a service and a root component with some basic functionalities that can be extended.
+
+The service component only should recieve events fromt the root component. For this purpose it provides an wrapper function 'registerService'. For the communication between the service and the root component, the root component provides the counterpart of this wrapper function - 'subscribeDataService'.
+
+#### service
+The service component, is the only component that is not devided into controller, model and view, because it does not need a own model and a user interface. 
+It is neccassary to extend from this service component to use its provided function.
+
+
+<ul>
+<li>app.fw.sv</li>
+</ul>
+
+Its major task is the communictaion with the backend. Therefore the method *registerService (methodName, serviceName, serviceFunction, callbackFunction[optional])* is provided. 
+
+	// EXAMPLE for calling registerService:
+	// the variable self.serviceRoot was defined before
+	
+	self.registerService('GET', 'readClaimPositions', function (client, claimNumber, callback) {
+    	return {
+        	options: {{object: options}},
+            serviceURL: {{string: URL resolved with given parameters "client" and "claimNumber"}},
+            callback: callback
+        };
+    });
+The available options you can find at the documentation from **[qwest](https://github.com/pyrsmk/qwest)**, as **[qwest](https://github.com/pyrsmk/qwest)** is used internal for the service-calls.
+For default service options, the variable *defaultServiceOptions* is defined and set to *{dataType: 'json'}* by default. It is possible to overwrite this variable.
+
+Furthermore it provides functions to set and get the service-root-URL and to get the service-URL of a given service.
+
+
+#### root
+A specific root component is responsible for a lot of tasks.
+
+This basic root component provides the handling of window resizing.
+It provides a function for all components to read the service-URL from a specific service from the service component. Furthermore it includes the traits *app.fw.trait.root.i18next.ctrl* and *app.fw.trait.abstract.serviceError.ctrl*.
+<ul>
+<li>controller: app.fw.root.ctrl</li>
+<li>model: app.fw.root.model</li>
+<li>view: app.fw.root.view</li>
+</ul>
+
+
+<h2>Style Mixins</h2>
+The `msg-js-spa-framework` includes some useful mixins for styling as well. This can be used through importing the file *spa-fw.less* in your .less-files:
+
+		@import "../../../../node_modules/msg-js-spa-framework/src/app/spa-fw";
+
+
+<h2>Mockdata Registry</h2>
+A mockdata registry is also delivered by the `msg-js-spa-framework`. To use it, it needs to be required:
+
+		require('msg-js-spa-framework/mockdata-registry')

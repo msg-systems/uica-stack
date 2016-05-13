@@ -7,14 +7,15 @@ register:
   spa-fw.componentjs:
     JS:
     - ../../node_modules/componentjs/component.js
+  spa-fw.componentjs.abstractComponents:
+    JS:
     - ../../src/app/fw/abstract/abstract-ctrl.js
     - ../../src/app/fw/abstract/abstract-model.js
     - ../../src/app/fw/abstract/abstract-view.js
-    - ../../src/app/fw/_trait/root/service/service-ctrl.js
-    - ../../src/app/fw/root/abstractRoot-ctrl.js
-    - ../../src/app/fw/root/abstractRoot-model.js
-    - ../../src/app/fw/root/abstractRoot-view.js
-    - ../../src/app/fw/sv/abstractSV.js
+    - ../../src/app/fw/root/root-ctrl.js
+    - ../../src/app/fw/root/root-model.js
+    - ../../src/app/fw/root/root-view.js
+    - ../../src/app/fw/sv/sv.js
   spa-fw.componentjs.debugger:
     JS:
     - ../../node_modules/componentjs/component.plugin.debugger.js

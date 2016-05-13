@@ -1,5 +1,5 @@
-ComponentJS.ns("app.fw.abstractRoot");
-app.fw.abstractRoot.view = ComponentJS.clazz({
+ComponentJS.ns("app.fw.root");
+app.fw.root.view = ComponentJS.clazz({
     extend: app.fw.abstract.view,
     dynamics: {},
     protos: {

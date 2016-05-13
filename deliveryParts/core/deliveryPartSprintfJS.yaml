@@ -1,0 +1,4 @@
+register:
+  spa-fw.sprintfjs:
+    JS:
+    - ../../node_modules/sprintfjs/sprintf.js

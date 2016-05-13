@@ -13,6 +13,6 @@ register:
   spa-fw.i18next-xhr-backend:
     JS:
     - ../../node_modules/i18next-xhr-backend/i18nextXHRBackend.js
-  spa-fw.i18next-root-trait:
+  spa-fw.trait.i18next:
     JS:
     - ../../src/app/fw/_trait/root/i18next/i18next-ctrl.js
