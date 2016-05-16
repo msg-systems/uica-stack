@@ -147,7 +147,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/es5-shim'><img src="https://nodei.co/npm/es5-shim.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.5.7</td>
+	<td>4.5.8</td>
 	<td>JS</td>	
   </tr>
   <tr>
@@ -162,7 +162,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/normalize.css'><img src="https://nodei.co/npm/normalize.css.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.0.0</td>
+	<td>4.1.1</td>
 	<td>CSS</td>	
   </tr>
   <tr>
@@ -173,7 +173,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.6.1</td>
+	<td>4.12.0</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
@@ -202,13 +202,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/hammerjs'><img src="https://nodei.co/npm/hammerjs.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.6</td>
+	<td>2.0.8</td>
 	<td>JS</td>
 	<td>1. Interaction Concept - Touch, Gesture</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery'><img src="https://nodei.co/npm/jquery.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.2.2</td>
+	<td>2.2.3</td>
 	<td>JS</td>
 	<td>3. Interface States<br>6. Mask Rendering<br>7. Data Binding</td>
   </tr>
@@ -226,7 +226,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.12.0</td>
+	<td>2.13.0</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -238,13 +238,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.3.5</td>
+	<td>3.1.0</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next-xhr-backend'><img src="https://nodei.co/npm/i18next-xhr-backend.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.5.3</td>
+	<td>0.5.4</td>
 	<td>JS - String</td>
 	<td>12. Backend Communication - Internationalization / Localization</td>
   </tr>
@@ -265,19 +265,19 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/datamodeljs'><img src="https://nodei.co/npm/datamodeljs.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.2.5</td>
+	<td>1.3.0</td>
 	<td>JS</td>
 	<td>11. Business Model</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/qwest'><img src="https://nodei.co/npm/qwest.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.3.0</td>
+	<td>4.4.2</td>
 	<td>JS</td>
 	<td>12. Backend Communication - AJAX</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/socket.io-client'><img src="https://nodei.co/npm/socket.io-client.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.4.5</td>
+	<td>1.4.6</td>
 	<td>JS</td>
 	<td>12. Backend Communication - WebSockets</td>
   </tr></tbody>
