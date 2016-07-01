@@ -1,6 +1,10 @@
 ComponentJS.ns("app.fw.abstract");
 app.fw.abstract.ctrl = ComponentJS.clazz({
-    mixin: [ComponentJS.marker.controller],
+    mixin: [
+        ComponentJS.marker.controller,
+        // handling errors, that occure when calling a backend service
+        app.fw.trait.abstract.serviceError.ctrl
+    ],
     dynamics: {
         model: null,
         view: null

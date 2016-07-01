@@ -13,9 +13,7 @@ ComponentJS.ns("app.fw.root");
 app.fw.root.ctrl = ComponentJS.clazz({
     extend: app.fw.abstract.ctrl,
     mixin: [
-        app.fw.trait.root.i18next.ctrl,
-        // handling errors, that occure when calling a backend service
-        app.fw.trait.abstract.serviceError.ctrl
+        app.fw.trait.root.i18next.ctrl
     ],
     dynamics: {
         // Timer for resize commandos, so that not every window.resize is forwarded to the components

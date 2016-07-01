@@ -147,7 +147,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/es5-shim'><img src="https://nodei.co/npm/es5-shim.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.5.8</td>
+	<td>4.5.9</td>
 	<td>JS</td>	
   </tr>
   <tr>
@@ -157,12 +157,12 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/Base64'><img src="https://nodei.co/npm/Base64.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.3.0</td>
+	<td>1.0.0</td>
 	<td>JS</td>	
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/normalize.css'><img src="https://nodei.co/npm/normalize.css.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.1.1</td>
+	<td>4.2.0</td>
 	<td>CSS</td>	
   </tr>
   <tr>
@@ -173,7 +173,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.12.0</td>
+	<td>4.13.1</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
@@ -196,7 +196,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/mousetrap'><img src="https://nodei.co/npm/mousetrap.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.5.3</td>
+	<td>1.6.0</td>
 	<td>JS</td>
 	<td>1. Interaction Concept - Keyboard</td>
   </tr>
@@ -238,13 +238,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.1.0</td>
+	<td>3.3.1</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next-xhr-backend'><img src="https://nodei.co/npm/i18next-xhr-backend.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.5.4</td>
+	<td>0.6.0</td>
 	<td>JS - String</td>
 	<td>12. Backend Communication - Internationalization / Localization</td>
   </tr>
@@ -271,13 +271,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/qwest'><img src="https://nodei.co/npm/qwest.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.4.2</td>
+	<td>4.4.4</td>
 	<td>JS</td>
 	<td>12. Backend Communication - AJAX</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/socket.io-client'><img src="https://nodei.co/npm/socket.io-client.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.4.6</td>
+	<td>1.4.8</td>
 	<td>JS</td>
 	<td>12. Backend Communication - WebSockets</td>
   </tr></tbody>
@@ -312,7 +312,7 @@ The specific root component must implement the function 'userLanguage' to return
 </ul>
 
 #### serviceError
-The default error handling callback for service methods is available through mixing in this trait. It is already mixed in the root-component and in the abstract component. So the of the error handling is taking care due extending from this components.
+The default error handling callback for service methods is available through mixing in this trait. It is already mixed in the abstract component. So of the error handling is taking care due extending from this component.
 
 <ul>
 <li>controller: app.fw.trait.abstract.serviceError.ctrl</li>
