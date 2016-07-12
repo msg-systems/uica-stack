@@ -1,0 +1,141 @@
+##
+##  msg JavaScript Single Page App Framework - deliveryPacker config file
+##  Design and Development by msg Applied Technology Research
+##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
+##
+import:
+- codingpolicy.yaml
+
+rules:
+  ConsoleLogRule:
+    ruleText: "console.log usage"
+    fixText: "do not check 'console.log' in - it should not be committed into the master repo - please delete it before commit"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*console\.log.*)$/mg'
+      includeFiles: "*(mock|rules|src)/**/*.js"
+      excludedFiles:
+        - "src/app/fw/sv/sv.js"
+        - "rules/RegisterCallRule.js"
+        - "mock/mockutils/mockdata-registry.js"
+  AppLogRule:
+    ruleText: "app.log usage"
+    fixText: "do not commit 'app.log' in - it should not be committed into the master repo unless discussed with the client architect - please delete it before commit"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*app\.log.*)$/mg'
+      includeFiles: "*(mock|rules|src)/**/*.js"
+      excludedFiles:
+        - "src/app/fw/sv/sv.js"
+  NoLooseEndsRule:
+    ruleText: "unfinished business (TODO, FIXME etc.)"
+    fixText: "tie up the loose ends"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*(?:FIXME|TODO).*)$/img'
+      includeFiles: "*(mock|rules|src)/**/*.js"
+  ObserveOwnModelRule:
+    ruleText: "invalid model name of self.observeOwnModel"
+    fixText: "when using self.observeOwnModel - the model field name must start with param:, data:, state:, event: or command:"
+    rule: ObserveOwnModelRule
+    options:
+      includeFiles: "**/*+(-ctrl|-view).js"
+  ObserveParentModelRule:
+    ruleText: "invalid model name of self.observeParentModel"
+    fixText: "when using self.observeParentModel - the model field name must start with global:param:, global:data:, global:state:, global:event: or global:command:"
+    rule: ObserveParentModelRule
+    options:
+      includeFiles: "**/*+(-ctrl|-view).js"
+  ComponentJSObserveRule:
+    ruleText: "invalid usage of ComponentJS observe"
+    fixText: "do not use cs(this).observe - use this.observeOwnModel or this.observeParentModel instead"
+    rule: RegExpRule
+    options:
+      regExp:
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\)|this\.model)(?:[\r\n])*?\.observe\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\)|this\.model)(?:[\r\n])*?\.observe\((?:[^{]|[\r\n])*?\))/g
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+  ComponentJSPublishRule:
+    ruleText: "invalid usage of ComponentJS publish"
+    fixText: "do not use cs(this).publish - use this.publishEventToParent or this.publishEventToChildren instead"
+    rule: RegExpRule
+    options:
+      regExp:
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.publish\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.publish\((?:[^{]|[\r\n])*?\))/g
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+  ComponentJSSubscribeRule:
+    ruleText: "invalid usage of ComponentJS subscribe"
+    fixText: "do not use cs(this).subscribe - use this.subscribeForChildEvent or this.subscribeForParentEvent instead"
+    rule: RegExpRule
+    options:
+      regExp:
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.subscribe\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.subscribe\((?:[^{]|[\r\n])*?\))/g
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+  ComponentJSRegisterRule:
+    ruleText: "invalid usage of ComponentJS register"
+    fixText: "do not use cs(this).register - use self.registerAPI instead"
+    rule: RegExpRule
+    options:
+      regExp:
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.register\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
+        - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.register\((?:[^{]|[\r\n])*?\))/g
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+  PublishSubscribeRule:
+    ruleText:
+      - "unused subscriptions for child events"
+      - "unused publish events toward parents"
+      - "unused subscriptions for parent events"
+      - "unused publish events toward children"
+    findingAccessors:
+      - "unusedSubscribeForChildEvents"
+      - "unusedPublishEventsToParent"
+      - "unusedSubscribeForParentEvent"
+      - "unusedPublishEventsToChildren"
+    fixText: "Check the publish and subscribe names - maybe you have a typo in it / otherwise explain why a publish/subscribe exists without its counter part"
+    rule: PublishSubscribeRule
+    severity: "warning"
+    options:
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      excludePatterns:
+        - "getServiceURLForService"
+        - "fw:handleError"
+  RegisterCallRule:
+    ruleText: "unused register method"
+    fixText: "Check the register and call names - maybe you have a typo in it / otherwise explain why a register/call exists without its counter part"
+    rule: RegisterCallRule
+    severity: "warning"
+    options:
+      excludePatterns:
+        - "focus"
+        - "getServiceRoot"
+        - "setServiceRoot"
+  MissingComponentYamlRule:
+    ruleText: "components without component.yaml file"
+    fixText: "ensure that every component uses a valid component.yaml file. If it is missing, create it and document the component properly with it."
+    options:
+      includeFiles: "**/*+(-ctrl|-model|-view).js"
+  ComponentYamlStructureRule:
+    ruleText: "component.yaml files with an invalid content structure"
+    fixText: "ensure that the content of the component.yaml files match the desired format (see docu/component.yaml)"
+  ComponentYamlLiabilityRule:
+    ruleText: "component.yaml content liability against the source code"
+    fixText: "ensure that the content of the component.yaml files match what the source code really does (or vice verca)"
+    severity: "warning"
+  RegisterAPIViewRule:
+    ruleText: "not allowed registered methods in view and for not allowed calls of view methods from the controller"
+    fixText: "It is only allowed to registered methods in the view that return a markup. The controller is only allowed to call methods from the view to get a views markup."
+    severity: "warning"
+  TeardownModelFieldsRule:
+    ruleText: "model fields, that are resettet in the teardown method in the controller"
+    fixText: "do not reset model fields in the teardown methods that do not belong to this component, only reset model fields that are defined in the model, that belongs to the controller."
+  RegisterDataBindingsRule:
+    ruleText: "wrong observer of model fields in the method registerDataBindings"
+    fixText: "do not observe model values with starts with 'state:', 'global:state:', 'command:', 'global:command:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerDataBindings in the view - only observe 'global:data:xxx' or 'data:xxx'"
+  RegisterStateBindingsRule:
+    ruleText: "wrong observer of model fields in the method registerStateBindings"
+    fixText: "do not observe model values with starts with 'data:', 'global:data:', 'command:', 'global:command:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerStateBindings in the view - only observe 'global:state:xxx' or 'state:xxx'"
+  RegisterCommandBindingsRule:
+    ruleText: "wrong observer of model fields in the method registerCommandBindings"
+    fixText: "do not observe model values with starts with 'data:', 'global:data:', 'state:', 'global:state:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerCommandBindings in the view - only observe 'global:command:xxx' or 'command:xxx'"

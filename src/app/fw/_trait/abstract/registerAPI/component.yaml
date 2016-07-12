@@ -1,0 +1,8 @@
+package: "app.fw.trait.abstract.registerAPI"
+id: "appFWTraitAbstractRegisterAPI"
+desc: "Communication between controller and view on direct method calls is enabled by this trait.
+       It allows the controller to 'call' markup resolvings that are under concern of the view.
+       Delegating this task to the view using model fields or events would have been to heavy weighted.
+       The controller created the view and is therefor allowed to communicate with its view directly.
+       Using a register/call to achieve the markup resolving is the best way.
+       This trait gives the views a 'registerAPI' method that only allows 'markup' registrations"

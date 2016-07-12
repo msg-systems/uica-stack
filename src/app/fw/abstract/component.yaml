@@ -1,0 +1,31 @@
+package: "app.fw.abstract"
+id: "appFWAbstract"
+desc: "The abstract component encapsules the componentjs framework for all components.
+       Instead of using the cs().observe(), .register(), .publish(), .subscribe() functions this abstract component enables easier methods that
+       wrap the componentjs functions. For details see the source code."
+interface:
+  api:
+    register:
+      focus:
+        desc: "Any component can be focused. This call will be handed to the view using the command:focus field.
+               The view can then set focus on the proper UI element."
+  model:
+    define:
+      own:
+        command:
+          focus:
+            desc: "Trigger field for the view to set focus on the proper UI element"
+            param: "boolean"
+    observe:
+      own:
+        command:
+          focus:
+            desc: "On command the view sets focus to the proper UI element"
+            param: "state - boolean - true"
+            part: "View"
+  ui:
+    plug:
+      default:
+        desc: "Each component plugs itself into the default socket provided by its parent.
+               A component can ignore this plug by setting the 'useDefaultPlug' dynamic attribute to 'false'.
+               In that case the component must handle the plug mechanism itself."

@@ -1,0 +1,4 @@
+package: "app.fw.trait.root.i18next"
+id: "appFWTraitRootI18next"
+desc: "This trait encapsules the i18next framework and ensures that the framework is initialised at setup life cycle.
+       It should best be included into the root component."

@@ -1,0 +1,12 @@
+package: "app.fw.trait.abstract.serviceError"
+id: "appFWTraitAbstractServiceError"
+desc: "This trait adds the 'onError' function which includes the logic of handling service errors.
+       All services often need the same error handling routine e.g. displaying error messages or handling a missing login."
+interface:
+  events:
+    publish:
+      toParent:
+        "fw:handleError":
+          desc: "Sends an error message from the service handling routine to a parent component since this error routine is not responsible for the concrete displaying of the
+                 message"
+          param: "error - string - the error message"

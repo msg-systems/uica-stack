@@ -1,0 +1,39 @@
+package: "app.fw.root"
+id: "appFWRoot"
+desc: "This component is a standard root component that already handles the following functionality:
+       - handling window resize by mapping it to componentjs model field 'global:command:resize'
+       - enable service URL resolving for any component by subscribing to event 'getServiceURLForService'
+       - provide a generic method 'subscribeDataService' that enables services for all components by mapping them to the service component"
+interface:
+  api:
+    call:
+      getServiceURL:
+        desc: "Resolves the URL for a servicename from the service component"
+        param: "service - string - the service name"
+        part: "service component"
+  events:
+    subscribe:
+      forChildren:
+        getServiceURLForService:
+          desc: "Enables any component to resolve the URL of a specific service. Mostly needed for new windows or iframes that open an URL directly. "
+          param: "service - string - the service name"
+  model:
+    define:
+      global:
+        command:
+          resize:
+            desc: "Trigger is set when the browser windows got resized"
+            param: "boolean"
+      own:
+        event:
+          windowResize:
+            desc: "Trigger when the browser window gets resized. Components might have to updated their view based on new sizes."
+            param: "boolean"
+    observe:
+      own:
+        event:
+          windowResize:
+            desc: "Morphs the windowResize event into the 'global:command:resize' so any component can observe that command.
+                   To make this perform good this observer adds a timing treshold of 1 sec before the command is resolving."
+            param: "state - boolean - true"
+            part: "Controller"
