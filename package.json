@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.2.0",
+    "version":     "0.2.1",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -47,7 +47,7 @@
         "qwest":                "4.4.4",
         "socket.io-client":     "1.4.8",
         "sprintfjs":            "1.2.3",
-        "codingpolicyjs":       "0.1.0",
+        "codingpolicyjs":       "0.1.1",
         "ast-traverse":         "0.1.1",
         "glob":                 "7.0.5"
     },
