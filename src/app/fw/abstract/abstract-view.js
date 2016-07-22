@@ -3,6 +3,7 @@ app.fw.abstract.view = ComponentJS.clazz({
     mixin: [ComponentJS.marker.view],
     dynamics: {
         ui: null,
+        model: null,
         markupName: null,
         markupParams: {},
         useDefaultPlug: true
@@ -10,6 +11,9 @@ app.fw.abstract.view = ComponentJS.clazz({
     protos: {
 
         create: function () {
+            // due to component hierarchie and visibility pattern - if the view needs values from its model
+            // it can ask herself for values and we shortcut the view as its model
+            this.model = ComponentJS(this)
         },
 
         destroy: function () {
@@ -109,21 +113,33 @@ app.fw.abstract.view = ComponentJS.clazz({
          */
         observeOwnModel: function (modelname, callback, params) {
             var self = this;
-            var regexp = /^(?:state:|command:|param:|data:|event:).*/;
+            var regexp = /^(?:global:)?(?:state:|command:|param:|data:|event:).*$/;
             if (modelname) {
                 var match = modelname.match(regexp);
                 if (match && match.length === 1) {
-                    var config = {
-                        name: modelname,
-                        spool: ComponentJS(self).state(),
-                        func: function () {
-                            callback.apply(self, arguments)
+                    var modelSpec = self.model.property('ComponentJS:model').spec;
+                    if (modelSpec[modelname]) {
+                        var config = {
+                            name: modelname,
+                            spool: ComponentJS(self).state(),
+                            func: function () {
+                                callback.apply(self, arguments)
+                            }
+                        };
+                        config = _.merge(config, params);
+                        ComponentJS(self).observe(config);
+                    } else {
+                        var possibleFields = "";
+                        for (var key in modelSpec) {
+                            if (possibleFields.length) possibleFields += ", "
+                            possibleFields += "'" + key + "'"
                         }
-                    };
-                    config = _.merge(config, params);
-                    ComponentJS(self).observe(config);
+                        throw new Error("own model observer: modelname '" + modelname + "' is not defined in the own model. Possible fields: " + possibleFields);
+                    }
                 } else {
-                    throw new Error("own model observer must start with either param:, state:, command:, data: or event: - current modelname was " + modelname);
+                    throw new Error("own model observer must start with either param:, state:, command:, data:, event:, " +
+                        "global:param:, global:state:, global:command:, global:data: or global:event: " +
+                        "- current modelname was " + modelname);
                 }
             }
         },
@@ -142,15 +158,20 @@ app.fw.abstract.view = ComponentJS.clazz({
             if (modelname) {
                 var match = modelname.match(regexp);
                 if (match && match.length === 1) {
-                    var config = {
-                        name: modelname,
-                        spool: "..:" + ComponentJS(self).state(),
-                        func: function () {
-                            callback.apply(self, arguments)
-                        }
-                    };
-                    config = _.merge(config, params);
-                    ComponentJS(self).observe(config);
+                    var modelSpec = self.model.property('ComponentJS:model').spec;
+                    if (!modelSpec[modelname]) {
+                        var config = {
+                            name: modelname,
+                            spool: "..:" + ComponentJS(self).state(),
+                            func: function () {
+                                callback.apply(self, arguments)
+                            }
+                        };
+                        config = _.merge(config, params);
+                        ComponentJS(self).observe(config);
+                    } else {
+                        throw new Error("parent model observer: modelname '" + modelname + "' is part of the own model. Use observeOwnModel instead");
+                    }
                 } else {
                     throw new Error("parent model observer must start with either global:param:, global:state:, " +
                         "global:command:, global:data: or global:event: - current modelname was " + modelname);

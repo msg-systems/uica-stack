@@ -36,13 +36,13 @@ rules:
       includeFiles: "*(mock|rules|src)/**/*.js"
   ObserveOwnModelRule:
     ruleText: "invalid model name of self.observeOwnModel"
-    fixText: "when using self.observeOwnModel - the model field name must start with param:, data:, state:, event: or command:"
+    fixText: "when using self.observeOwnModel - the model field name must start with param:, data:, state:, event: command: for internal use or global:param:, global:data:, global:state:, global:event:, global:command: for global use and must be located in the components model"
     rule: ObserveOwnModelRule
     options:
       includeFiles: "**/*+(-ctrl|-view).js"
   ObserveParentModelRule:
     ruleText: "invalid model name of self.observeParentModel"
-    fixText: "when using self.observeParentModel - the model field name must start with global:param:, global:data:, global:state:, global:event: or global:command:"
+    fixText: "when using self.observeParentModel - the model field name must start with global:param:, global:data:, global:state:, global:event: or global:command: and must not be located in the components model"
     rule: ObserveParentModelRule
     options:
       includeFiles: "**/*+(-ctrl|-view).js"

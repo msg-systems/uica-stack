@@ -170,21 +170,33 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
          */
         observeOwnModel: function (modelname, callback, params) {
             var self = this;
-            var regexp = /^(?:state:|command:|param:|data:|event:).*/;
+            var regexp = /^(?:global:)?(?:state:|command:|param:|data:|event:).*$/;
             if (modelname) {
                 var match = modelname.match(regexp);
                 if (match && match.length === 1) {
-                    var config = {
-                        name: modelname,
-                        spool: "..:" + ComponentJS(self).state(),
-                        func: function () {
-                            callback.apply(self, arguments)
+                    var modelSpec = self.model.property('ComponentJS:model').spec;
+                    if (modelSpec[modelname]) {
+                        var config = {
+                            name: modelname,
+                            spool: "..:" + ComponentJS(self).state(),
+                            func: function () {
+                                callback.apply(self, arguments)
+                            }
+                        };
+                        config = _.merge(config, params);
+                        self.model.observe(config);
+                    } else {
+                        var possibleFields = "";
+                        for (var key in modelSpec) {
+                            if (possibleFields.length) possibleFields += ", "
+                            possibleFields += "'" + key + "'"
                         }
-                    };
-                    config = _.merge(config, params);
-                    self.model.observe(config);
+                        throw new Error("own model observer: modelname '" + modelname + "' is not defined in the own model. Possible fields: " + possibleFields);
+                    }
                 } else {
-                    throw new Error("own model observer must start with either param:, state:, command:, data: or event: - current modelname was " + modelname);
+                    throw new Error("own model observer must start with either param:, state:, command:, data:, event:, " +
+                        "global:param:, global:state:, global:command:, global:data: or global:event: " +
+                        "- current modelname was " + modelname);
                 }
             }
         },
@@ -203,15 +215,20 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
             if (modelname) {
                 var match = modelname.match(regexp);
                 if (match && match.length === 1) {
-                    var config = {
-                        name: modelname,
-                        spool: "..:" + ComponentJS(self).state(),
-                        func: function () {
-                            callback.apply(self, arguments)
-                        }
-                    };
-                    config = _.merge(config, params);
-                    self.model.observe(config);
+                    var modelSpec = self.model.property('ComponentJS:model').spec;
+                    if (!modelSpec[modelname]) {
+                        var config = {
+                            name: modelname,
+                            spool: "..:" + ComponentJS(self).state(),
+                            func: function () {
+                                callback.apply(self, arguments)
+                            }
+                        };
+                        config = _.merge(config, params);
+                        self.model.observe(config);
+                    } else {
+                        throw new Error("parent model observer: modelname '" + modelname + "' is part of the own model. Use observeOwnModel instead");
+                    }
                 } else {
                     throw new Error("parent model observer must start with either global:param:, global:state:, " +
                         "global:command:, global:data: or global:event: - current modelname was " + modelname);
