@@ -173,7 +173,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.13.1</td>
+	<td>4.14.1</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
@@ -214,7 +214,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery-markup'><img src="https://nodei.co/npm/jquery-markup.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.0.35</td>
+	<td>1.0.36</td>
 	<td>JS</td>
 	<td>6. Mask Rendering</td>
   </tr>
@@ -226,7 +226,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.13.0</td>
+	<td>2.14.1</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -238,13 +238,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.3.1</td>
+	<td>3.4.1</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next-xhr-backend'><img src="https://nodei.co/npm/i18next-xhr-backend.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.6.0</td>
+	<td>1.0.1</td>
 	<td>JS - String</td>
 	<td>12. Backend Communication - Internationalization / Localization</td>
   </tr>
@@ -259,7 +259,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.2.7</td>
+	<td>1.3.1</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>
