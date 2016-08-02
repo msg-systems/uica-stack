@@ -28,6 +28,9 @@ register:
   spa-fw.componentjs.values:
     JS:
     - ../../node_modules/componentjs/component.plugin.values.js
+  spa-fw.componentjs.vue:
+    JS:
+    - ../../node_modules/componentjs/component.plugin.vue.js
   spa-fw.componentjs.testdrive:
     JS:
     - ../../node_modules/componentjs/component.plugin.testdrive.js

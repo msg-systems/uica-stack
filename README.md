@@ -259,7 +259,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.3.1</td>
+	<td>1.4.0</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>

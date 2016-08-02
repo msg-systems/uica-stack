@@ -30,6 +30,7 @@ build:
 - spa-fw.componentjs.jquery
 - spa-fw.componentjs.localstorage
 - spa-fw.componentjs.values
+- spa-fw.componentjs.vue
 - spa-fw.componentjs.testdrive
 - spa-fw.trait.registerAPIViewWrapper
 - spa-fw.trait.serviceError
