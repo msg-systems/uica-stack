@@ -1,0 +1,4 @@
+register:
+  spa-fw.vue:
+    JS:
+    - ../../node_modules/vue/dist/vue.js

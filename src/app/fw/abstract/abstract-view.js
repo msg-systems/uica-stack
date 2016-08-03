@@ -2,6 +2,7 @@ ComponentJS.ns("app.fw.abstract");
 app.fw.abstract.view = ComponentJS.clazz({
     mixin: [ComponentJS.marker.view],
     dynamics: {
+        vue: null,
         ui: null,
         model: null,
         markupName: null,
@@ -33,7 +34,15 @@ app.fw.abstract.view = ComponentJS.clazz({
 
         render: function () {
             var self = this;
-            self.ui = $.markup(self.markupName, self.markupParams).localize();
+            if (ComponentJS.plugin("vue")) {
+                self.vue = ComponentJS(this).vue({
+                    template: $.markup.render(self.markupName)
+                })
+                self.ui = $(self.vue.$el).localize();
+            } else {
+                self.vue = null;
+                self.ui = $.markup(self.markupName, self.markupParams).localize();
+            }
             self.prepareMaskReferences();
             self.prepareMaskRendering();
             self.registerCommandBindings();

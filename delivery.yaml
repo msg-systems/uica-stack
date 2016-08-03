@@ -37,6 +37,7 @@ build:
 - spa-fw.trait.i18next
 - spa-fw.componentjs.abstractComponents
 - spa-fw.handlebars
+- spa-fw.vue
 - spa-fw.jqueryMarkup
 - spa-fw.qwest
 - spa-fw.socket.io-client

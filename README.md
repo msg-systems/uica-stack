@@ -210,13 +210,19 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	<td><a href='https://www.npmjs.com/package/jquery'><img src="https://nodei.co/npm/jquery.png?downloads=true&stars=true" alt=""/></a></td>
 	<td>2.2.3</td>
 	<td>JS</td>
-	<td>3. Interface States<br>6. Mask Rendering<br>7. Data Binding</td>
+	<td>3. Interface States<br>6. Mask Rendering<br>7. Data Binding (manual)</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery-markup'><img src="https://nodei.co/npm/jquery-markup.png?downloads=true&stars=true" alt=""/></a></td>
 	<td>1.0.36</td>
 	<td>JS</td>
 	<td>6. Mask Rendering</td>
+  </tr>
+  <tr>
+	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
+	<td>2.0.0-beta.5</td>
+	<td>JS</td>
+	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/handlebars'><img src="https://nodei.co/npm/handlebars.png?downloads=true&stars=true" alt=""/></a></td>
@@ -271,7 +277,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/qwest'><img src="https://nodei.co/npm/qwest.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.4.4</td>
+	<td>4.4.5</td>
 	<td>JS</td>
 	<td>12. Backend Communication - AJAX</td>
   </tr>
