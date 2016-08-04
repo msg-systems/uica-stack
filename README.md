@@ -226,7 +226,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.0-beta.5</td>
+	<td>2.0.0-beta.6</td>
 	<td>JS</td>
 	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
