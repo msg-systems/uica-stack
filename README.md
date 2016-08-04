@@ -207,6 +207,12 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	<td>1. Interaction Concept - Touch, Gesture</td>
   </tr>
   <tr>
+	<td><a href='https://www.npmjs.com/package/animate.css'><img src="https://nodei.co/npm/animate.css.png?downloads=true&stars=true" alt=""/></a></td>
+	<td>3.5.1</td>
+	<td>CSS</td>
+	<td>3. Interface States<br>6. Mask Rendering</td>
+  </tr>
+  <tr>
 	<td><a href='https://www.npmjs.com/package/jquery'><img src="https://nodei.co/npm/jquery.png?downloads=true&stars=true" alt=""/></a></td>
 	<td>2.2.4</td>
 	<td>JS</td>
