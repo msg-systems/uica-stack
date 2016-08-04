@@ -208,7 +208,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery'><img src="https://nodei.co/npm/jquery.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.2.3</td>
+	<td>2.2.4</td>
 	<td>JS</td>
 	<td>3. Interface States<br>6. Mask Rendering<br>7. Data Binding (manual)</td>
   </tr>
@@ -265,7 +265,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.4.0</td>
+	<td>1.4.1</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>
