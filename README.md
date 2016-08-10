@@ -183,6 +183,12 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	<td>JS</td>
 	<td>HTML Encoding/Decoding</td>
   </tr>
+  <tr>
+   	<td><a href='https://www.npmjs.com/package/bluebird'><img src="https://nodei.co/npm/bluebird.png?downloads=true&stars=true" alt=""/></a></td>
+   	<td>3.4.1</td>
+   	<td>JS</td>
+   	<td>Promises</td>
+  </tr>
 </tbody>
 </table>
 
@@ -256,7 +262,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next-xhr-backend'><img src="https://nodei.co/npm/i18next-xhr-backend.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.0.1</td>
+	<td>1.1.0</td>
 	<td>JS - String</td>
 	<td>12. Backend Communication - Internationalization / Localization</td>
   </tr>
