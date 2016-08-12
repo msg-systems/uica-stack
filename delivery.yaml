@@ -21,6 +21,7 @@ build:
 - spa-fw.i18next
 - spa-fw.i18next-xhr-backend
 - spa-fw.i18next-jquery
+- spa-fw.bluebird
 - spa-fw.moment
 - spa-fw.numeral
 - spa-fw.mousetrap
