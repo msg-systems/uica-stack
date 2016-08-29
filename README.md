@@ -173,7 +173,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.14.1</td>
+	<td>4.15.0</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
@@ -185,7 +185,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
    	<td><a href='https://www.npmjs.com/package/bluebird'><img src="https://nodei.co/npm/bluebird.png?downloads=true&stars=true" alt=""/></a></td>
-   	<td>3.4.1</td>
+   	<td>3.4.3</td>
    	<td>JS</td>
    	<td>Promises</td>
   </tr>
@@ -232,7 +232,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.0-beta.6</td>
+	<td>2.0.0-rc.3</td>
 	<td>JS</td>
 	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
@@ -268,7 +268,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery-i18next'><img src="https://nodei.co/npm/jquery-i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.0.0</td>
+	<td>1.1.0</td>
 	<td>HTML DOM</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -277,7 +277,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.4.1</td>
+	<td>1.4.3</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>
