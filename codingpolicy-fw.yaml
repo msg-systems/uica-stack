@@ -39,13 +39,13 @@ rules:
     fixText: "when using self.observeOwnModel - the model field name must start with param:, data:, state:, event: command: for internal use or global:param:, global:data:, global:state:, global:event:, global:command: for global use and must be located in the components model"
     rule: ObserveOwnModelRule
     options:
-      includeFiles: "**/*+(-ctrl|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-view).js"
   ObserveParentModelRule:
     ruleText: "invalid model name of self.observeParentModel"
     fixText: "when using self.observeParentModel - the model field name must start with global:param:, global:data:, global:state:, global:event: or global:command: and must not be located in the components model"
     rule: ObserveParentModelRule
     options:
-      includeFiles: "**/*+(-ctrl|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-view).js"
   ComponentJSObserveRule:
     ruleText: "invalid usage of ComponentJS observe"
     fixText: "do not use cs(this).observe - use this.observeOwnModel or this.observeParentModel instead"
@@ -54,7 +54,7 @@ rules:
       regExp:
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\)|this\.model)(?:[\r\n])*?\.observe\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\)|this\.model)(?:[\r\n])*?\.observe\((?:[^{]|[\r\n])*?\))/g
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
   ComponentJSPublishRule:
     ruleText: "invalid usage of ComponentJS publish"
     fixText: "do not use cs(this).publish - use this.publishEventToParent or this.publishEventToChildren instead"
@@ -63,7 +63,7 @@ rules:
       regExp:
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.publish\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.publish\((?:[^{]|[\r\n])*?\))/g
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
   ComponentJSSubscribeRule:
     ruleText: "invalid usage of ComponentJS subscribe"
     fixText: "do not use cs(this).subscribe - use this.subscribeForChildEvent or this.subscribeForParentEvent instead"
@@ -72,7 +72,7 @@ rules:
       regExp:
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.subscribe\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.subscribe\((?:[^{]|[\r\n])*?\))/g
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
   ComponentJSRegisterRule:
     ruleText: "invalid usage of ComponentJS register"
     fixText: "do not use cs(this).register - use self.registerAPI instead"
@@ -81,7 +81,7 @@ rules:
       regExp:
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.register\(\{(?:[^{]|[\r\n])*?(?:.|[\r\n])*?\}(?:[\r\n])*?\))/g
         - /(?:(cs\(this\)|cs\(self\)|cs\(_this\))(?:[\r\n])*?\.register\((?:[^{]|[\r\n])*?\))/g
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
   PublishSubscribeRule:
     ruleText:
       - "unused subscriptions for child events"
@@ -97,7 +97,7 @@ rules:
     rule: PublishSubscribeRule
     severity: "warning"
     options:
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
       excludePatterns:
         - "getServiceURLForService"
         - "fw:handleError"
@@ -107,6 +107,7 @@ rules:
     rule: RegisterCallRule
     severity: "warning"
     options:
+      includeFiles: "*(mock|rules|src)/**/*.js"
       excludePatterns:
         - "focus"
         - "getServiceRoot"
@@ -115,7 +116,7 @@ rules:
     ruleText: "components without component.yaml file"
     fixText: "ensure that every component uses a valid component.yaml file. If it is missing, create it and document the component properly with it."
     options:
-      includeFiles: "**/*+(-ctrl|-model|-view).js"
+      includeFiles: "*(mock|rules|src)/**/*+(-ctrl|-model|-view).js"
   ComponentYamlStructureRule:
     ruleText: "component.yaml files with an invalid content structure"
     fixText: "ensure that the content of the component.yaml files match the desired format (see docu/component.yaml)"
@@ -127,15 +128,27 @@ rules:
     ruleText: "not allowed registered methods in view and for not allowed calls of view methods from the controller"
     fixText: "It is only allowed to registered methods in the view that return a markup. The controller is only allowed to call methods from the view to get a views markup."
     severity: "warning"
+    options:
+      ctrlFiles: "*(mock|rules|src)/**/*-ctrl.js"
+      viewFiles: "*(mock|rules|src)/**/*-view.js"
   TeardownModelFieldsRule:
     ruleText: "model fields, that are resettet in the teardown method in the controller"
     fixText: "do not reset model fields in the teardown methods that do not belong to this component, only reset model fields that are defined in the model, that belongs to the controller."
+    options:
+      ctrlFiles: "*(mock|rules|src)/**/*-ctrl.js"
+      modelFiles: "*(mock|rules|src)/**/*-view.js"
   RegisterDataBindingsRule:
     ruleText: "wrong observer of model fields in the method registerDataBindings"
     fixText: "do not observe model values with starts with 'state:', 'global:state:', 'command:', 'global:command:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerDataBindings in the view - only observe 'global:data:xxx' or 'data:xxx'"
+    options:
+      viewFiles: "*(mock|rules|src)/**/*-view.js"
   RegisterStateBindingsRule:
     ruleText: "wrong observer of model fields in the method registerStateBindings"
     fixText: "do not observe model values with starts with 'data:', 'global:data:', 'command:', 'global:command:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerStateBindings in the view - only observe 'global:state:xxx' or 'state:xxx'"
+    options:
+      viewFiles: "*(mock|rules|src)/**/*-view.js"
   RegisterCommandBindingsRule:
     ruleText: "wrong observer of model fields in the method registerCommandBindings"
     fixText: "do not observe model values with starts with 'data:', 'global:data:', 'state:', 'global:state:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerCommandBindings in the view - only observe 'global:command:xxx' or 'command:xxx'"
+    options:
+      viewFiles: "*(mock|rules|src)/**/*-view.js"

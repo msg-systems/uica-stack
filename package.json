@@ -49,7 +49,7 @@
         "bluebird":             "3.4.6",
         "socket.io-client":     "1.4.8",
         "sprintfjs":            "1.2.3",
-        "codingpolicyjs":       "0.1.3",
+        "codingpolicyjs":       "0.1.5",
         "ast-traverse":         "0.1.1",
         "glob":                 "7.0.6",
         "animate.css":          "3.5.2"

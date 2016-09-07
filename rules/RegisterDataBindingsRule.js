@@ -1,3 +1,5 @@
+var _ = require("lodash")
+
 module.exports = (function () {
     var protosQuery = "//ObjectExpression //Property [ //Identifier [ @name == 'protos' ]] "
     var registerBindingsQuery = "/ObjectExpression //Property [ //Identifier [ @name == 'registerDataBindings' ]] " +
