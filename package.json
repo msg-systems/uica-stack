@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.3.10",
+    "version":     "0.3.11",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -26,7 +26,7 @@
     "dependencies": {
         "lodash":               "4.15.0",
         "jquery":               "2.2.4",
-        "js-htmlencode":        "0.1.0",
+        "js-htmlencode":        "0.2.0",
         "console-polyfill":     "0.2.2",
         "es5-shim":             "4.5.9",
         "json-js":              "1.1.2",
@@ -42,17 +42,17 @@
         "i18next-xhr-backend":  "1.1.0",
         "modernizr":            "3.3.1",
         "handlebars":           "4.0.5",
-        "vue":                  "2.0.0-rc.3",
+        "vue":                  "2.0.0-rc.4",
         "jquery-markup":        "1.0.36",
         "hammerjs":             "2.0.8",
         "qwest":                "4.4.5",
-        "bluebird":             "3.4.3",
+        "bluebird":             "3.4.6",
         "socket.io-client":     "1.4.8",
         "sprintfjs":            "1.2.3",
-        "codingpolicyjs":       "0.1.2",
+        "codingpolicyjs":       "0.1.3",
         "ast-traverse":         "0.1.1",
         "glob":                 "7.0.6",
-        "animate.css":          "3.5.1"
+        "animate.css":          "3.5.2"
     },
     "devDependencies": {
         "delivery-packer":      "0.2.0",
@@ -66,7 +66,7 @@
         "postinstall": "modernizr -c ./lib/modernizr/config-all.json -d ./lib/modernizr/modernizr.js",
         "prepublish":  "npm run upd && npm run policy",
         "test":        "deliveryPacker",
-        "policy":      "codingpolicy -r ./src codingpolicy-fw.yaml",
+        "policy":      "codingpolicy -r . codingpolicy-fw.yaml",
         "upd":         "upd -n"
     }
 }

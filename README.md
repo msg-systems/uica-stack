@@ -179,13 +179,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/js-htmlencode'><img src="https://nodei.co/npm/js-htmlencode.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.1.0</td>
+	<td>0.2.0</td>
 	<td>JS</td>
 	<td>HTML Encoding/Decoding</td>
   </tr>
   <tr>
    	<td><a href='https://www.npmjs.com/package/bluebird'><img src="https://nodei.co/npm/bluebird.png?downloads=true&stars=true" alt=""/></a></td>
-   	<td>3.4.3</td>
+   	<td>3.4.6</td>
    	<td>JS</td>
    	<td>Promises</td>
   </tr>
@@ -214,7 +214,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/animate.css'><img src="https://nodei.co/npm/animate.css.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.5.1</td>
+	<td>3.5.2</td>
 	<td>CSS</td>
 	<td>3. Interface States<br>6. Mask Rendering</td>
   </tr>
