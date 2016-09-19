@@ -141,7 +141,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/console-polyfill'><img src="https://nodei.co/npm/console-polyfill.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.2.2</td>
+	<td>0.2.3</td>
 	<td>JS</td>	
 	<td rowspan="5">Browser incompatibilities</td>
   </tr>
@@ -244,7 +244,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.14.1</td>
+	<td>2.15.0</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -256,7 +256,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.4.1</td>
+	<td>3.4.2</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -283,7 +283,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/datamodeljs'><img src="https://nodei.co/npm/datamodeljs.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.3.1</td>
+	<td>1.3.2</td>
 	<td>JS</td>
 	<td>11. Business Model</td>
   </tr>
