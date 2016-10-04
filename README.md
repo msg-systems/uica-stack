@@ -29,7 +29,8 @@ npm install msg-js-spa-framework --save-dev
 Once it is installed, add a `delivery.yaml` to the SPA's root folder. `msg-js-spa-framework` is based upon [delivery-packer](https://github.com/msg-systems/delivery-packer) which handles the library artifact creation. Based on `delivery.yaml` files the delivery artifact can be assembled.
 
 So basically `msg-js-spa-framework` only assembles the proper JavaScript frameworks to a delivery artifact. And due to the fact that [delivery-packer](https://github.com/msg-systems/delivery-packer) is modular - concrete SPA projects can take advantage of `msg-js-spa-framework` by simply importing it into their `delivery.yaml`.
- 
+
+To shorten the ramp-up time you can fork [msg-js-spa-skeleton](https://github.com/msg-systems/msg-js-spa-skeleton) and start with a fresh SPA environment including some examples and documentation.
 
 ```yaml
 import:
@@ -121,7 +122,7 @@ Coming from the users point of view and going thru the UI application until the 
 12. __Backend Communication__:<br>
     e.g. Request/Response, Synchronization, Push, Pull, Pulled-Push
 
-Using a single framework like [AngularJS](https://angularjs.org/) or [ExtJS](https://www.sencha.com/products/extjs/#overview) often does not adress all layers of the UI application and you end up in taking other third party libraries into your application. 
+Using a single framework like [AngularJS](https://angularjs.org/) or [ExtJS](https://www.sencha.com/products/extjs/#overview) often does not address all layers of the UI application and you end up in taking third party libraries into your application.
 
 ## Standard set of frameworks 
 
@@ -162,7 +163,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/normalize.css'><img src="https://nodei.co/npm/normalize.css.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.2.0</td>
+	<td>5.0.0</td>
 	<td>CSS</td>	
   </tr>
   <tr>
@@ -232,7 +233,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.0-rc.3</td>
+	<td>2.0.1</td>
 	<td>JS</td>
 	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
@@ -244,7 +245,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.15.0</td>
+	<td>2.15.1</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -256,13 +257,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.4.2</td>
+	<td>3.4.3</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next-xhr-backend'><img src="https://nodei.co/npm/i18next-xhr-backend.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.1.0</td>
+	<td>1.2.0</td>
 	<td>JS - String</td>
 	<td>12. Backend Communication - Internationalization / Localization</td>
   </tr>
