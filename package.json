@@ -64,7 +64,7 @@
     },
     "scripts": {
         "postinstall": "modernizr -c ./lib/modernizr/config-all.json -d ./lib/modernizr/modernizr.js",
-        "prepublish":  "test && npm run upd && npm run policy",
+        "prepublish":  "npm test && npm run upd && npm run policy",
         "test":        "deliveryPacker",
         "policy":      "codingpolicy -r . codingpolicy-fw.yaml",
         "upd":         "upd -n"
