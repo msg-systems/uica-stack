@@ -174,7 +174,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.15.0</td>
+	<td>4.16.5</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
@@ -233,7 +233,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.1</td>
+	<td>2.0.3</td>
 	<td>JS</td>
 	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
@@ -245,7 +245,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.15.1</td>
+	<td>2.15.2</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -257,7 +257,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/i18next'><img src="https://nodei.co/npm/i18next.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.4.3</td>
+	<td>3.4.4</td>
 	<td>JS - String</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -296,7 +296,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/socket.io-client'><img src="https://nodei.co/npm/socket.io-client.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.4.8</td>
+	<td>1.5.1</td>
 	<td>JS</td>
 	<td>12. Backend Communication - WebSockets</td>
   </tr></tbody>

@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.4.0",
+    "version":     "0.4.1",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -24,40 +24,41 @@
         "url":  "https://github.com/msg-systems/msg-js-spa-framework/issues"
     },
     "dependencies": {
-        "lodash":               "4.16.3",
+        "lodash":               "4.16.5",
         "jquery":               "2.2.4",
         "js-htmlencode":        "0.2.0",
         "console-polyfill":     "0.2.3",
         "es5-shim":             "4.5.9",
         "json-js":              "1.1.2",
         "Base64":               "1.0.0",
-        "moment":               "2.15.1",
+        "moment":               "2.15.2",
         "numeral":              "1.5.3",
         "componentjs":          "1.4.3",
         "datamodeljs":          "1.3.2",
         "normalize.css":        "5.0.0",
         "mousetrap":            "1.6.0",
-        "i18next":              "3.4.3",
+        "i18next":              "3.4.4",
         "jquery-i18next":       "1.1.0",
         "i18next-xhr-backend":  "1.2.0",
         "modernizr":            "3.3.1",
         "handlebars":           "4.0.5",
-        "vue":                  "2.0.1",
+        "vue":                  "2.0.3",
         "jquery-markup":        "1.0.36",
         "hammerjs":             "2.0.8",
         "qwest":                "4.4.5",
         "bluebird":             "3.4.6",
-        "socket.io-client":     "1.4.8",
+        "socket.io-client":     "1.5.1",
         "sprintfjs":            "1.2.3",
         "codingpolicyjs":       "0.1.7",
         "ast-traverse":         "0.1.1",
-        "glob":                 "7.1.0",
-        "animate.css":          "3.5.2"
+        "glob":                 "7.1.1",
+        "animate.css":          "3.5.2",
+        "js-mockdata-registry": "1.0.0"
     },
     "devDependencies": {
         "delivery-packer":      "0.2.0",
         "grunt":                "1.0.1",
-        "upd":                  "1.1.12"
+        "upd":                  "1.1.14"
     },
     "engines": {
         "node":                 ">=0.10.0"

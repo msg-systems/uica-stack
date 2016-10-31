@@ -1,2 +1,2 @@
 "use strict";
-module.exports = require('./mock/mockutils/mockdata-registry');
+module.exports = require('js-mockdata-registry');
