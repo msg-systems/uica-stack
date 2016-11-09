@@ -1,41 +1,42 @@
-# msg-js-spa-framework
+# uica-stack
 
-JavaScript SinglePageApp(SPA) Framework is a lightweight framework for building SPA libraries.
+User Interface Component Architecture (UICA) Stack is a stack that can be used for lightweight building HTML5/JavaScript Single Page Application.
 
-<p/>
-<img src="https://nodei.co/npm/msg-js-spa-framework.png?downloads=true&stars=true" alt=""/>
 
 <p/>
-<img src="https://david-dm.org/msg-systems/msg-js-spa-framework.png" alt=""/>
+<img src="https://nodei.co/npm/uica-stack.png?downloads=true&stars=true" alt=""/>
+
+<p/>
+<img src="https://david-dm.org/msg-systems/uica-stack.png" alt=""/>
 
 ## Purpose
-The `msg-js-spa-framework` is the optional large HTML5 Rich-Client
+The `uica-stack` is the optional large HTML5 Rich-Client
 framework for providing common functionality to the applications, either
 by itself or through embedded third-party libraries and frameworks.
 
 Major goals are:
 
 - Definition of a standard set of third-party libraries and frameworks used for SPA development
-- Using the `msg-js-spa-framework` should therefor minimize the configuration time of the SPA library building in concrete SPA projects    
+- Using the `uica-stack` should therefor minimize the configuration time of the SPA library building in concrete SPA projects
 
 ## Getting started
 
-To build an SPA project based on `msg-js-spa-framework` you have to install it via npm (shell or package.json):
+To build an SPA project based on `uica-stack` you have to install it via npm (shell or package.json):
 
 ```shell
-npm install msg-js-spa-framework --save-dev
+npm install uica-stack --save-dev
 ```
 
-Once it is installed, add a `delivery.yaml` to the SPA's root folder. `msg-js-spa-framework` is based upon [delivery-packer](https://github.com/msg-systems/delivery-packer) which handles the library artifact creation. Based on `delivery.yaml` files the delivery artifact can be assembled.
+Once it is installed, add a `delivery.yaml` to the SPA's root folder. `uica-stack` is based upon [delivery-packer](https://github.com/msg-systems/delivery-packer) which handles the library artifact creation. Based on `delivery.yaml` files the delivery artifact can be assembled.
 
-So basically `msg-js-spa-framework` only assembles the proper JavaScript frameworks to a delivery artifact. And due to the fact that [delivery-packer](https://github.com/msg-systems/delivery-packer) is modular - concrete SPA projects can take advantage of `msg-js-spa-framework` by simply importing it into their `delivery.yaml`.
+So basically `uica-stack` only assembles the proper JavaScript frameworks to a delivery artifact. And due to the fact that [delivery-packer](https://github.com/msg-systems/delivery-packer) is modular - concrete SPA projects can take advantage of `uica-stack` by simply importing it into their `delivery.yaml`.
 
 To shorten the ramp-up time you can fork [msg-js-spa-skeleton](https://github.com/msg-systems/msg-js-spa-skeleton) and start with a fresh SPA environment including some examples and documentation.
 
 ```yaml
 import:
-# use the msg-js-spa-framework as base
-- msg-js-spa-framework
+# use the uica-stack as base
+- uica-stack
 # you might add new delivery parts needed by the SPA project
 - {path_to_project_deliverables}/**/*.yaml
 
@@ -126,7 +127,7 @@ Using a single framework like [AngularJS](https://angularjs.org/) or [ExtJS](htt
 
 ## Standard set of frameworks 
 
-`msg-js-spa-framework` cherry picks the best frameworks to cover most of the layers. Some layers will not be handled by `msg-js-spa-framework` since they are too application specific and should not be handled globally like 'Interface Elements' or 'Optical Theme'. 
+`uica-stack` cherry picks the best frameworks to cover most of the layers. Some layers will not be handled by `uica-stack` since they are too application specific and should not be handled globally like 'Interface Elements' or 'Optical Theme'.
 
 Each concrete SPA must fill this layers with proper libraries or frameworks on its own. Take a look at [msg-js-spa-widgets](https://github.com/msg-systems/msg-js-spa-widgets) if you need assistance for layer 'Interface Elements' and 'Optical Theme'.
 
@@ -304,7 +305,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 
 <h2 id="abstractClasses">Standard set of abstract classes, traits and components</h2>
 
-Next to the libraries and frameworks the `msg-js-spa-framework` provides abstract classes, traits (mixins) and components.
+Next to the libraries and frameworks the `uica-stack` provides abstract classes, traits (mixins) and components.
 
 ### abstract classes
 
@@ -318,7 +319,7 @@ For each part of a component (controller, model and view) a abstract class is pr
 
 
 ### traits
-The `msg-js-spa-framework` provides some helpful traits. Some of them are already mixed in in the components of the `msg-js-spa-framework`, some can be mixed in to your specific components, if needed. 
+The `uica-stack` provides some helpful traits. Some of them are already mixed in in the components of the `uica-stack`, some can be mixed in to your specific components, if needed.
 
 #### i18next
 This trait handles the loading of the i18next-keys from the backend. By default this trait is included by the root-component.
@@ -350,7 +351,7 @@ Generally a Controller should only call a registered method of the view to get a
 
 
 ### components
-Each application needs a service and a root component. The `msg-js-spa-framework` provides a service and a root component with some basic functionalities that can be extended.
+Each application needs a service and a root component. The `uica-stack` provides a service and a root component with some basic functionalities that can be extended.
 
 The service component only should recieve events fromt the root component. For this purpose it provides an wrapper function 'registerService'. For the communication between the service and the root component, the root component provides the counterpart of this wrapper function - 'subscribeDataService'.
 
@@ -394,12 +395,12 @@ It provides a function for all components to read the service-URL from a specifi
 
 
 <h2>Style Mixins</h2>
-The `msg-js-spa-framework` includes some useful mixins for styling as well. This can be used through importing the file *spa-fw.less* in your .less-files:
+The `uica-stack` includes some useful mixins for styling as well. This can be used through importing the file *spa-fw.less* in your .less-files:
 
-		@import "../../../../node_modules/msg-js-spa-framework/src/app/spa-fw";
+		@import "../../../../node_modules/uica-stack/src/app/spa-fw";
 
 
 <h2>Mockdata Registry</h2>
-A mockdata registry is also delivered by the `msg-js-spa-framework`. To use it, it needs to be required:
+A mockdata registry is also delivered by the `uica-stack`. To use it, it needs to be required:
 
-		require('msg-js-spa-framework/mockdata-registry')
+		require('uica-stack/mockdata-registry')
