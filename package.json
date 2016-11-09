@@ -2,7 +2,7 @@
     "name":        "msg-js-spa-framework",
     "homepage":    "https://github.com/msg-systems/msg-js-spa-framework",
     "description": "JavaScript Single Page App Framework",
-    "version":     "0.4.1",
+    "version":     "0.4.2",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -23,6 +23,7 @@
     "bugs": {
         "url":  "https://github.com/msg-systems/msg-js-spa-framework/issues"
     },
+    "deprecated": "msg-js-spa-framework has been renamed to uica-stack, please install the latest version of uica-stack instead of msg-js-spa-framework",
     "dependencies": {
         "lodash":               "4.16.5",
         "jquery":               "2.2.4",
