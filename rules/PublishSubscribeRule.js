@@ -31,7 +31,7 @@ module.exports = (function () {
     var patternMatch = function (test, patternArray) {
         var result = false;
         if (test) {
-            _.forEach(patternArray, function(pattern) {
+            _.forEach(patternArray, function (pattern) {
                 if (test.match(pattern) !== null) {
                     result = true;
                 }
@@ -74,12 +74,35 @@ module.exports = (function () {
         return result
     }
 
+    var nameQueryFromList = function (list) {
+        var names = [];
+        if (list && Array.isArray(list)) {
+            names = list;
+        } else if (list) {
+            names.push(list);
+        }
+        var nameQuery = ""
+        names.forEach(function (name) {
+            if (nameQuery) {
+                nameQuery += " | "
+            }
+            nameQuery += "@name == '" + name + "'"
+        })
+        return nameQuery
+    }
+
     return function (options, tools) {
         var protosObjectQuery = "//ObjectExpression //Property [ //Identifier [ @name == 'protos' ]]";
-        var subscribeForChildQuery = "//ExpressionStatement [ //MemberExpression //Identifier [ @name == 'subscribeForChildEvent' | @name == 'subscribeDataService' ] ] /CallExpression"
-        var subscribeForParentQuery = "//ExpressionStatement [ //MemberExpression //Identifier [ @name == 'subscribeForParentEvent' ] ] /CallExpression"
-        var publishEventToParentQuery = "//CallExpression [ /MemberExpression //Identifier [ @name == 'publishEventToParent' ] ]"
-        var publishEventToChildrenQuery = "//CallExpression [ /MemberExpression //Identifier [ @name == 'publishEventToChildren' ] ]"
+
+        var subscribeForChildList = options.subscribeForChildQueries || ["subscribeForChildEvent", "subscribeDataService"]
+        var subscribeForParentList = options.subscribeForParentQueries || ["subscribeForParentEvent"]
+        var publishToParentList = options.publishToParentQueries || ["publishEventToParent"]
+        var publishToChildrenList = options.publishToChildrenQueries || ["publishEventToChildren"]
+
+        var subscribeForChildQuery = "//ExpressionStatement [ //MemberExpression //Identifier [ " + nameQueryFromList(subscribeForChildList) + " ] ] /CallExpression"
+        var subscribeForParentQuery = "//ExpressionStatement [ //MemberExpression //Identifier [ " + nameQueryFromList(subscribeForParentList) + " ] ] /CallExpression"
+        var publishEventToParentQuery = "//CallExpression [ /MemberExpression //Identifier [ " + nameQueryFromList(publishToParentList) + " ] ]"
+        var publishEventToChildrenQuery = "//CallExpression [ /MemberExpression //Identifier [ " + nameQueryFromList(publishToChildrenList) + " ] ]"
 
         var astList = tools.astJS.findAstList(options.root, options.includeFiles, options.excludedFiles)
 
