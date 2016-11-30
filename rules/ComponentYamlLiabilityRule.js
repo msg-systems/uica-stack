@@ -34,22 +34,21 @@ module.exports = (function () {
                     yamlRegisters.push({name: key, file: yamlFilename})
                 }
             }
-                }
+        }
         yamlRegisters = _.uniqBy(yamlRegisters, 'name')
+
+        var registerQueries = options.registerQueries || [{name: 'registerAPI', argument: 0}, {name: 'registerService', argument: 1}]
 
         var ctrlRegisters = []
         ctrlAstList.forEach(function (astObj) {
-            var registerAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == 'registerAPI']]")
-            registerAstList.forEach(function (eachRegisterAst) {
-                if (eachRegisterAst.arguments && eachRegisterAst.arguments[0].type === "Literal") {
-                    ctrlRegisters.push({name: eachRegisterAst.arguments[0].value, type: "registerAPI", file: astObj.file})
-                }
-            })
-            registerAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == 'registerService']]")
-            registerAstList.forEach(function (eachRegisterAst) {
-                if (eachRegisterAst.arguments && eachRegisterAst.arguments[1].type === "Literal") {
-                    ctrlRegisters.push({name: eachRegisterAst.arguments[1].value, type: "registerService", file: astObj.file})
-                }
+            var registerAstList;
+            registerQueries.forEach(function (registerQuery) {
+                registerAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == '" + registerQuery.name + "']]")
+                registerAstList.forEach(function (eachRegisterAst) {
+                    if (eachRegisterAst.arguments && eachRegisterAst.arguments[registerQuery.argument].type === "Literal") {
+                        ctrlRegisters.push({name: eachRegisterAst.arguments[registerQuery.argument].value, type: registerQuery.name, file: astObj.file})
+                    }
+                })
             })
         })
         ctrlRegisters = _.uniqBy(ctrlRegisters, 'name')
