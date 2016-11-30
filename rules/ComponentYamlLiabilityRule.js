@@ -37,7 +37,19 @@ module.exports = (function () {
         }
         yamlRegisters = _.uniqBy(yamlRegisters, 'name')
 
-        var registerQueries = options.registerQueries || [{name: 'registerAPI', argument: 0}, {name: 'registerService', argument: 1}]
+        // set default queries -> they are used if no special queries are set in the options
+        var registerQueries = [{name: 'registerAPI', index: 0}, {name: 'registerService', index: 1}]
+        if (options.registerQueries) {
+            registerQueries = []
+            options.registerQueries.forEach(function(query) {
+                // the query can be just a string or a object if the needed index is not 0
+                if (Object.prototype.toString.call(query) === Object.prototype.toString.call({})) {
+                    registerQueries.push(query)
+                } else {
+                    registerQueries.push({name: query, index: 0})
+                }
+            })
+        }
 
         var ctrlRegisters = []
         ctrlAstList.forEach(function (astObj) {
@@ -45,8 +57,8 @@ module.exports = (function () {
             registerQueries.forEach(function (registerQuery) {
                 registerAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == '" + registerQuery.name + "']]")
                 registerAstList.forEach(function (eachRegisterAst) {
-                    if (eachRegisterAst.arguments && eachRegisterAst.arguments[registerQuery.argument].type === "Literal") {
-                        ctrlRegisters.push({name: eachRegisterAst.arguments[registerQuery.argument].value, type: registerQuery.name, file: astObj.file})
+                    if (eachRegisterAst.arguments && eachRegisterAst.arguments[registerQuery.index].type === "Literal") {
+                        ctrlRegisters.push({name: eachRegisterAst.arguments[registerQuery.index].value, type: registerQuery.name, file: astObj.file})
                     }
                 })
             })
@@ -212,26 +224,29 @@ module.exports = (function () {
         }
         yamlSubscribers = _.uniqBy(yamlSubscribers, function(finding) { return finding.name + finding.type })
 
+        // set default queries -> they are used if no special queries are set in the options
+        var defaultQueries = ["subscribeForParentEvent", "subscribeForChildEvent"]
+        var subscribeQueries = defaultQueries
+        if (options.additionalSubscribeQueries)
+            subscribeQueries = subscribeQueries.concat(options.additionalSubscribeQueries)
+
         var ctrlSubscribers = []
         ctrlAstList.forEach(function (astObj) {
-            var subscribeAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == 'subscribeForParentEvent']] /Literal")
-            subscribeAstList.forEach(function (eachSubscribeAst) {
-                if (eachSubscribeAst.value) {
-                    ctrlSubscribers.push({name: eachSubscribeAst.value, type: "subscribeForParentEvent", file: astObj.file})
-                }
-            })
-            subscribeAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == 'subscribeForChildEvent']] /Literal")
-            subscribeAstList.forEach(function (eachSubscribeAst) {
-                if (eachSubscribeAst.value) {
-                    ctrlSubscribers.push({name: eachSubscribeAst.value, type: "subscribeForChildEvent", file: astObj.file})
-                }
+            var subscribeAstList;
+            subscribeQueries.forEach(function (query) {
+                subscribeAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == '" + query + "']] /Literal")
+                subscribeAstList.forEach(function (eachSubscribeAst) {
+                    if (eachSubscribeAst.value) {
+                        ctrlSubscribers.push({name: eachSubscribeAst.value, type: query, file: astObj.file})
+                    }
+                })
             })
         })
         ctrlSubscribers = _.uniqBy(ctrlSubscribers, function(finding) { return finding.name + finding.type })
 
         _.forEach(yamlSubscribers.concat(), function (yamlSubscribe) {
             var foundCtrlSubscribe = _.find(ctrlSubscribers, function (ctrlSubscribe) {
-                return (ctrlSubscribe.name === yamlSubscribe.name && ctrlSubscribe.type === yamlSubscribe.type)
+                return (ctrlSubscribe.name === yamlSubscribe.name && (_.includes(defaultQueries, ctrlSubscribe.type) ? ctrlSubscribe.type === yamlSubscribe.type : true))
             })
             if (foundCtrlSubscribe) {
                 yamlSubscribers = _.without(yamlSubscribers, yamlSubscribe)
@@ -334,7 +349,7 @@ module.exports = (function () {
                                 yamlModelObservers.push({name: fieldname, file: yamlFilename, type: "Controller"})
                             }
                             if (part.match(regexpView)) {
-                                yamlModelObservers.push({name: fieldname, file: yamlFilename , type: "View"})
+                                yamlModelObservers.push({name: fieldname, file: yamlFilename, type: "View"})
                             }
                         }
                     }
