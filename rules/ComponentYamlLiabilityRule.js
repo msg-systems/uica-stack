@@ -172,8 +172,8 @@ module.exports = (function () {
             })
             publishAstList = tools.astJS.astq.query(astObj.ast, "//CallExpression [ /MemberExpression /Identifier [@name == 'publishEventToChildren']]")
             publishAstList.forEach(function (eachPublishAst) {
-                if (eachPublishAst.arguments && eachPublishAst.arguments[1].type === "Literal") {
-                    ctrlPublishs.push({name: eachPublishAst.arguments[1].value, type: "publishEventToChildren", file: astObj.file})
+                if (eachPublishAst.arguments && eachPublishAst.arguments[0].type === "Literal") {
+                    ctrlPublishs.push({name: eachPublishAst.arguments[0].value, type: "publishEventToChildren", file: astObj.file})
                 }
             })
         })
