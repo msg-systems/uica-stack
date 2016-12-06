@@ -78,7 +78,6 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 spreading: true,
                 bubbling: false,
                 func: function (ev) {
-                    ev.propagation(false);
                     ev.result(callback.apply(self, arguments));
                 }
             };
@@ -101,7 +100,6 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 spreading: false,
                 bubbling: true,
                 func: function (ev) {
-                    ev.propagation(false);
                     ev.result(callback.apply(self, arguments));
                 }
             };
