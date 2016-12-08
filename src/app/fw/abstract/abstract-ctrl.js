@@ -238,20 +238,34 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
          * Hides the component and ensures that it stay disabled even if a parent of it is moving up in the component
          * life cycle. The ComponentJS property has to be always kept in sync with the disabling of the component
          * @param component
+         * @param callback
          */
-        disableAndHideComponent: function (component) {
+        disableAndHideComponent: function (component, callback) {
             component.property("ComponentJS:state-auto-increase", false);
-            component.state({state: "created", sync: true});
+            var opts = { state: "created", sync: true };
+            if (typeof  callback === "function") {
+                opts.func = function () {
+                    callback()
+                }
+            }
+            component.state(opts);
         },
 
         /**
          * Shows the component and ensures that it get visible again when a parent of it is moving up in the component
          * life cycle. The ComponentJS property has to be always kept in sync with the enabling of the component
          * @param component
+         * @param callback
          */
-        enableAndShowComponent: function (component) {
+        enableAndShowComponent: function (component, callback) {
             component.property("ComponentJS:state-auto-increase", true);
-            component.state({state: component.parent().state(), sync: true});
+            var opts = { state: component.parent().state(), sync: true };
+            if (typeof  callback === "function") {
+                opts.func = function () {
+                    callback()
+                }
+            }
+            component.state(opts)
         }
 
     }
