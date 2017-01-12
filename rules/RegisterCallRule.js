@@ -112,11 +112,17 @@ module.exports = (function () {
         var registerFindings = [], registerSecondArgFindings = [], callFindings = []
 
         astList.forEach(function (astObj) {
-            var protos = tools.astJS.astq.query(astObj.ast, protosObjectQuery)
-            registerFindings = registerFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], registerQuery), astObj.file, tools.astJS))
-            callFindings = callFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], callQuery), astObj.file, tools.astJS))
-            if (secondArg)
-                registerSecondArgFindings = registerSecondArgFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], registerServicesQuery), astObj.file, tools.astJS))
+            try {
+                var protos       = tools.astJS.astq.query(astObj.ast, protosObjectQuery)
+                if (protos.length === 1) {
+                    registerFindings = registerFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], registerQuery), astObj.file, tools.astJS))
+                    callFindings     = callFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], callQuery), astObj.file, tools.astJS))
+                    if (secondArg)
+                        registerSecondArgFindings = registerSecondArgFindings.concat(prepareQueryFindings(tools.astJS.astq.query(protos[0], registerServicesQuery), astObj.file, tools.astJS))
+                }
+            } catch (e) {
+                throw new Error('File ' + astObj.file + ' fails with: ' + e.message)
+            }
         })
 
         var registers = reorderFindingsByNameAndFilter(registerFindings, options.excludePatterns)
