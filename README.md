@@ -129,7 +129,7 @@ Using a single framework like [AngularJS](https://angularjs.org/) or [ExtJS](htt
 
 `uica-stack` cherry picks the best frameworks to cover most of the layers. Some layers will not be handled by `uica-stack` since they are too application specific and should not be handled globally like 'Interface Elements' or 'Optical Theme'.
 
-Each concrete SPA must fill this layers with proper libraries or frameworks on its own. Take a look at [msg-js-spa-widgets](https://github.com/msg-systems/msg-js-spa-widgets) if you need assistance for layer 'Interface Elements' and 'Optical Theme'.
+Each concrete SPA must fill this layers with proper libraries or frameworks on its own. Take a look at [uica-widgets](https://github.com/msg-systems/uica-widgets) if you need assistance for layer 'Interface Elements' and 'Optical Theme'.
 
 The following table lists all frameworks and libraries mapped to the 12 UI layers (technical view). Some libraries could not be mapped to a specific UI layer since they cover a global purpose needed by web applications like browser incompatibilities or JavaScript language basics.
 
