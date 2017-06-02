@@ -148,3 +148,6 @@ rules:
     fixText: "do not observe model values with starts with 'data:', 'global:data:', 'state:', 'global:state:', 'event:', 'global:event:', 'param:', 'global:param:' in the method registerCommandBindings in the view - only observe 'global:command:xxx' or 'command:xxx'"
     options:
       viewFiles: "src/**/*-view.js"
+  ComponentYamlUniqIdRule:
+      ruleText: "component.yaml files must have uniq Ids"
+      fixText: "ensure that the Id of the component.yaml is uniq"

@@ -19,3 +19,4 @@ register:
   RegisterDataBindingsRule: "./rules/RegisterDataBindingsRule.js"
   RegisterStateBindingsRule: "./rules/RegisterStateBindingsRule.js"
   RegisterCommandBindingsRule: "./rules/RegisterCommandBindingsRule.js"
+  ComponentYamlUniqIdRule: "./rules/ComponentYamlUniqIdRule.js"
