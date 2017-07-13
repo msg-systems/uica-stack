@@ -35,10 +35,16 @@ app.fw.abstract.view = ComponentJS.clazz({
         render: function () {
             var self = this;
             if (ComponentJS.plugin("vue")) {
-                self.vue = ComponentJS(this).vue({
-                    template: $.markup.render(self.markupName)
-                })
-                self.ui = $(self.vue.$el).localize();
+                var template = $.markup.render(self.markupName)
+                if (template) {
+                    self.vue = ComponentJS(this).vue({
+                        template: template
+                    })
+                    self.ui = $(self.vue.$el).localize();
+                } else {
+                    self.vue = null;
+                    self.ui = template;
+                }
             } else {
                 self.vue = null;
                 self.ui = $.markup(self.markupName, self.markupParams).localize();
