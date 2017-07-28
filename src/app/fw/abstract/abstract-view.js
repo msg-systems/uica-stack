@@ -35,7 +35,7 @@ app.fw.abstract.view = ComponentJS.clazz({
         render: function () {
             var self = this;
             if (ComponentJS.plugin("vue")) {
-                var template = $.markup.render(self.markupName)
+                var template = $.markup.render(self.markupName, self.markupParams)
                 if (template) {
                     self.vue = ComponentJS(this).vue({
                         template: template
@@ -43,7 +43,7 @@ app.fw.abstract.view = ComponentJS.clazz({
                     self.ui = $(self.vue.$el).localize();
                 } else {
                     self.vue = null;
-                    self.ui = template;
+                    self.ui = $.markup(self.markupName, self.markupParams).localize();
                 }
             } else {
                 self.vue = null;
