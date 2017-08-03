@@ -63,7 +63,7 @@ app.fw.sv = ComponentJS.clazz({
                     self.requestCounter++;
                     qwest.setDefaultOptions(options);
                     var method = methodName.toLowerCase();
-                    qwest[method](result.serviceURL, result.data || {})
+                    qwest[method](result.serviceURL, result.data || null)
                         .then(function (xhr) {
                             var text = xhr.responseText;
                             if (callbackFunction)
