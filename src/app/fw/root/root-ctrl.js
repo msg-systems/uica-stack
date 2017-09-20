@@ -54,7 +54,7 @@ app.fw.root.ctrl = ComponentJS.clazz({
 
         },
 
-        subscribeDataService: function (serviceName, callback) {
+        subscribeDataService: function (serviceName, callback, toggleAroundServiceCall) {
             var self = this;
             self.subscribeForChildEvent(serviceName, function (/*ev*/) {
                 if (arguments.length >= 3) {
@@ -67,6 +67,9 @@ app.fw.root.ctrl = ComponentJS.clazz({
                     serviceArguments = serviceArguments.concat(remainingArguments);
                     serviceArguments.push(
                         function (success, result, loginNeeded) {
+                            if(toggleAroundServiceCall) {
+                                self.afterServiceCall();
+                            }
                             if (success) {
                                 var resultObjs;
                                 if (typeof callback === "function") {
@@ -87,11 +90,30 @@ app.fw.root.ctrl = ComponentJS.clazz({
                             }
                         }
                     );
+                    if(toggleAroundServiceCall) {
+                        self.beforeServiceCall();
+                    }
                     self.service.call.apply(self.service, serviceArguments)
                 } else {
                     throw new Error("You are calling service(" + serviceName + ") without the proper arguments. Provide at least a success callback handler and an error callback handler");
                 }
             });
+        },
+
+        /**
+         * Is executed before each service call made by 'subscribeDataService()' if the parameter
+         * 'toggleAroundServiceCall' passed to 'subscribeDataService()' is true. Can for example be used to show a progress spinner.
+         */
+        beforeServiceCall: function () {
+
+        },
+
+        /**
+         * Is executed after each service call made by 'subscribeDataService()' if the parameter
+         * 'toggleAroundServiceCall' passed to 'subscribeDataService()' is true. Can for example be used to show a progress spinner.
+         */
+        afterServiceCall: function() {
+
         },
 
         clearResizeTimer: function () {
