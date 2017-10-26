@@ -242,9 +242,8 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
          */
         disableAndHideComponent: function (component, callback) {
             component.property("ComponentJS:state-auto-increase", false);
-            var callbackIsAFunction = typeof callback === "function"
-            var opts = { state: "created", sync: !callbackIsAFunction };
-            if (callbackIsAFunction) {
+            var opts = { state: "created", sync: true };
+            if (typeof  callback === "function") {
                 opts.func = function () {
                     callback()
                 }
@@ -260,9 +259,8 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
          */
         enableAndShowComponent: function (component, callback) {
             component.property("ComponentJS:state-auto-increase", true);
-            var callbackIsAFunction = typeof callback === "function"
-            var opts = { state: component.parent().state(), sync: !callbackIsAFunction };
-            if (callbackIsAFunction) {
+            var opts = { state: component.parent().state(), sync: true };
+            if (typeof  callback === "function") {
                 opts.func = function () {
                     callback()
                 }
