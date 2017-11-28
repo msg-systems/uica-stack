@@ -38,7 +38,9 @@ app.fw.abstract.view = ComponentJS.clazz({
                 var template = $.markup.render(self.markupName, self.markupParams)
                 if (template) {
                     self.vue = ComponentJS(this).vue({
-                        template: template,
+                        options: {
+                            template: template
+                        },
                         spool: ComponentJS(self).state()
                     })
                     self.ui = $(self.vue.$el).localize();

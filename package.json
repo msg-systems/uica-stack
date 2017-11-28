@@ -2,7 +2,7 @@
     "name":        "uica-stack",
     "homepage":    "https://github.com/msg-systems/uica-stack",
     "description": "User Interface Component Architecture (UICA) Stack",
-    "version":     "0.9.16",
+    "version":     "0.9.17",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
