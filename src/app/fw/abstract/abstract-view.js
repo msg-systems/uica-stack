@@ -7,7 +7,8 @@ app.fw.abstract.view = ComponentJS.clazz({
         model: null,
         markupName: null,
         markupParams: {},
-        useDefaultPlug: true
+        useDefaultPlug: true,
+        useVue: true
     },
     protos: {
 
@@ -34,7 +35,7 @@ app.fw.abstract.view = ComponentJS.clazz({
 
         render: function () {
             var self = this;
-            if (ComponentJS.plugin("vue")) {
+            if (this.useVue && ComponentJS.plugin("vue")) {
                 var template = $.markup.render(self.markupName, self.markupParams)
                 if (template) {
                     self.vue = ComponentJS(this).vue({
