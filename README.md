@@ -143,13 +143,13 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/console-polyfill'><img src="https://nodei.co/npm/console-polyfill.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.2.3</td>
+	<td>0.3.0</td>
 	<td>JS</td>	
 	<td rowspan="5">Browser incompatibilities</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/es5-shim'><img src="https://nodei.co/npm/es5-shim.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.5.9</td>
+	<td>4.5.10</td>
 	<td>JS</td>	
   </tr>
   <tr>
@@ -159,35 +159,35 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/Base64'><img src="https://nodei.co/npm/Base64.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.0.0</td>
+	<td>1.0.1</td>
 	<td>JS</td>	
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/normalize.css'><img src="https://nodei.co/npm/normalize.css.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>5.0.0</td>
+	<td>7.0.0</td>
 	<td>CSS</td>	
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/modernizr'><img src="https://nodei.co/npm/modernizr.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>3.3.1</td>
+	<td>3.5.0</td>
 	<td>JS</td>
 	<td>Browser feature detection</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.16.5</td>
+	<td>4.17.4</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/js-htmlencode'><img src="https://nodei.co/npm/js-htmlencode.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>0.2.0</td>
+	<td>0.3.0</td>
 	<td>JS</td>
 	<td>HTML Encoding/Decoding</td>
   </tr>
   <tr>
    	<td><a href='https://www.npmjs.com/package/bluebird'><img src="https://nodei.co/npm/bluebird.png?downloads=true&stars=true" alt=""/></a></td>
-   	<td>3.4.6</td>
+   	<td>3.5.1</td>
    	<td>JS</td>
    	<td>Promises</td>
   </tr>
@@ -204,7 +204,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/mousetrap'><img src="https://nodei.co/npm/mousetrap.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.6.0</td>
+	<td>1.6.1</td>
 	<td>JS</td>
 	<td>1. Interaction Concept - Keyboard</td>
   </tr>
@@ -228,31 +228,31 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/jquery-markup'><img src="https://nodei.co/npm/jquery-markup.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.0.36</td>
+	<td>1.0.38</td>
 	<td>JS</td>
 	<td>6. Mask Rendering</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/vue'><img src="https://nodei.co/npm/vue.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.0.3</td>
+	<td>2.5.13</td>
 	<td>JS</td>
 	<td>6. Mask Rendering<br>7. Data Binding (programmatic)</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/handlebars'><img src="https://nodei.co/npm/handlebars.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.0.5</td>
+	<td>4.0.11</td>
 	<td>JS</td>
 	<td>6. Mask Rendering - Template engine</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/moment'><img src="https://nodei.co/npm/moment.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>2.15.2</td>
+	<td>2.20.1</td>
 	<td>JS - Date</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/numeral'><img src="https://nodei.co/npm/numeral.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>1.5.3</td>
+	<td>2.0.6</td>
 	<td>JS - Number</td>
 	<td>6. Mask Rendering - Internationalization / Localization</td>
   </tr>
@@ -279,7 +279,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.4.3</td>
+	<td>1.6.0</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>
@@ -291,7 +291,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/qwest'><img src="https://nodei.co/npm/qwest.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.4.5</td>
+	<td>4.5.0</td>
 	<td>JS</td>
 	<td>12. Backend Communication - AJAX</td>
   </tr>
