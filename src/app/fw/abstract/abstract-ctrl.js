@@ -259,13 +259,16 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
          */
         enableAndShowComponent: function (component, callback) {
             component.property("ComponentJS:state-auto-increase", true);
-            var opts = { state: component.parent().state(), sync: true };
-            if (typeof  callback === "function") {
-                opts.func = function () {
-                    callback()
+            // do nothing if the component is not part of the component tree
+            if (component.parent()) {
+                var opts = { state: component.parent().state(), sync: true };
+                if (typeof  callback === "function") {
+                    opts.func = function () {
+                        callback()
+                    }
                 }
+                component.state(opts)
             }
-            component.state(opts)
         }
 
     }

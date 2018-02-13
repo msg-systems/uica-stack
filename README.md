@@ -31,7 +31,7 @@ Once it is installed, add a `delivery.yaml` to the SPA's root folder. `uica-stac
 
 So basically `uica-stack` only assembles the proper JavaScript frameworks to a delivery artifact. And due to the fact that [delivery-packer](https://github.com/msg-systems/delivery-packer) is modular - concrete SPA projects can take advantage of `uica-stack` by simply importing it into their `delivery.yaml`.
 
-To shorten the ramp-up time you can fork [msg-js-spa-skeleton](https://github.com/msg-systems/msg-js-spa-skeleton) and start with a fresh SPA environment including some examples and documentation.
+To shorten the ramp-up time you can fork [uica-skeleton](https://github.com/msg-systems/uica-skeleton) and start with a fresh SPA environment including some examples and documentation.
 
 ```yaml
 import:
@@ -41,7 +41,7 @@ import:
 - {path_to_project_deliverables}/**/*.yaml
 
 build:
-# you might exclude deliverables from the msg-js-spa-framwork if you want/have to (note they all start with spa-fw.)
+# you might exclude deliverables from uica-framwork if you want/have to (note they all start with spa-fw.)
 - "!spa-fw.componentjs"
 # and add proper replacements on your own - just ensure that those alias names are registered
 - {yournamespace}.angularjs
@@ -279,7 +279,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
 	Additionally abstract classes and traits for ComponentJS are provided.<br>
 	See <a href="#abstractClasses">Standard set of abstract classes, traits and components</a> for detailed information.
 	</td>
-	<td>1.6.0</td>
+	<td>1.6.1</td>
 	<td>JS</td>
 	<td>8. Presentation Model<br>9. Dialog Control<br>10. Dialog Structure</td>
   </tr>
