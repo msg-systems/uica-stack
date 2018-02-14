@@ -96,7 +96,7 @@ module.exports = (function () {
 
         var subscribeForChildList = options.subscribeForChildQueries || ["subscribeForChildEvent", "subscribeDataService"]
         var subscribeForParentList = options.subscribeForParentQueries || ["subscribeForParentEvent"]
-        var publishToParentList = options.publishToParentQueries || ["publishEventToParent"]
+        var publishToParentList = options.publishToParentQueries || ["publishEventToParent", "publishDataService"]
         var publishToChildrenList = options.publishToChildrenQueries || ["publishEventToChildren"]
 
         var subscribeForChildQuery = "//ExpressionStatement [ //MemberExpression //Identifier [ " + nameQueryFromList(subscribeForChildList) + " ] ] /CallExpression"

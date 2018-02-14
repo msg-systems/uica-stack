@@ -110,6 +110,67 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
         /**
          * Wraps the ComponentJS publish method and sets the proper attributes for events bubbling to parent
          * components. It provides a shortcut for developers to avoid ComponentJS API reading and understanding.
+         * Beside publishEventToParent this shortcut method is intended to highlight service calls.
+         * Service calls will need a success and error callback as the last arguments. Additionally this method
+         * will wrap the success and error callback into a function that swallows ComponentJS errors indicating
+         * a component lookup problem which occurs in case that the callback is called asynchronously after the
+         * component got destroyed already.
+         * @param eventname the parent event name
+         * @param [arguments] additional arguments for ComponentJS publish are pushed to args parameter
+         */
+        publishDataService: function (eventname) {
+            var self = this;
+            // sanity check the arguments for at least eventname, successCB und errorCB
+            if (arguments.length < 3) {
+                throw new Error("You are calling service(" + serviceName + ") without the proper arguments. Provide at least a success callback handler and an error callback handler.");
+            }
+            // sanity check the success callback
+            var successCB = arguments[arguments.length - 2];                       // the second last argument is the successCB
+            if (typeof successCB !== "function" && successCB !== undefined) {
+                throw new Error("You are calling service(" + serviceName + ") without the proper arguments. The second last argument must be the success callback and must be a function.");
+            }
+            // sanity check the error callback
+            var errorCB = arguments[arguments.length - 1];                         // the last argument ist the errorCB
+            if (typeof errorCB !== "function" && errorCB !== undefined) {
+                throw new Error("You are calling service(" + serviceName + ") without the proper arguments. The last argument must be the error callback and must be a function.");
+            }
+            var remainingArguments = Array.prototype.slice.call(arguments, 1, -2); // remaining arguments without eventname, successCB und errorCB
+            var serviceArguments = [].concat(remainingArguments)
+            serviceArguments.push(function successWrapper() {
+                try {
+                    if (typeof successCB === "function") {
+                        successCB.apply(self, arguments)
+                    }
+                } catch (e) {
+                    // ignore the ComponentJS lookup error - because the component is dead already and execution of the callback is useless
+                    if (e && e.message.indexOf("[ComponentJS]: ERROR: lookup: invalid base component") !== 0) {
+                        throw e
+                    }
+                }
+            })
+            serviceArguments.push(function errorWrapper() {
+                try {
+                    if (typeof errorCB === "function") {
+                        errorCB.apply(self, arguments)
+                    }
+                } catch (e) {
+                    // ignore the ComponentJS lookup error - because the component is dead already and execution of the callback is useless
+                    if (e && e.message.indexOf("[ComponentJS]: ERROR: lookup: invalid base component") !== 0) {
+                        throw e
+                    }
+                }
+            })
+            return ComponentJS(self).publish({
+                name: eventname,
+                spreading: false,
+                bubbling: true,
+                args: serviceArguments
+            }).result();
+        },
+
+        /**
+         * Wraps the ComponentJS publish method and sets the proper attributes for events bubbling to parent
+         * components. It provides a shortcut for developers to avoid ComponentJS API reading and understanding.
          * @param eventname the parent event name
          * @param [arguments] additional arguments for ComponentJS publish are pushed to args parameter
          */
