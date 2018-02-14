@@ -32,7 +32,7 @@ module.exports = (function () {
         var result = false;
         if (test) {
             _.forEach(patternArray, function (pattern) {
-                if (test.match(pattern) !== null) {
+                if (typeof test === "string" && test.match(pattern) !== null) {
                     result = true;
                 }
             })
