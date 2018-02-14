@@ -99,6 +99,23 @@ rules:
       excludePatterns:
         - "getServiceURLForService"
         - "fw:handleError"
+      subscribeForChildQueries: "subscribeForChildEvent"
+  PublishSubscribeDataServiceRule:
+    ruleText:
+      - "unused subscriptions for data services"
+      - "unused publish events for data services"
+    findingAccessors:
+      - "unusedSubscribeForChildEvents"
+      - "unusedPublishEventsToParent"
+    fixText: "Check the publish and subscribe names - maybe you have a typo in it / otherwise explain why a publish/subscribe exists without its counter part"
+    rule: PublishSubscribeRule
+    severity: "error"
+    options:
+      includeFiles: "src/**/*-ctrl.js"
+      subscribeForChildQueries: "subscribeDataService"
+      subscribeForParentQueries: "<none>"
+      publishToParentQueries: "publishDataService"
+      publishToChildrenQueries: "<none>"
   RegisterCallRule:
     ruleText: "unused register method"
     fixText: "Check the register and call names - maybe you have a typo in it / otherwise explain why a register/call exists without its counter part"

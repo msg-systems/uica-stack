@@ -175,7 +175,7 @@ The following table lists all frameworks and libraries mapped to the 12 UI layer
   </tr>
   <tr>
 	<td><a href='https://www.npmjs.com/package/lodash'><img src="https://nodei.co/npm/lodash.png?downloads=true&stars=true" alt=""/></a></td>
-	<td>4.17.4</td>
+	<td>4.17.5</td>
 	<td>JS</td>
 	<td>Array handling</td>
   </tr>

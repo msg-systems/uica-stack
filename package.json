@@ -2,7 +2,7 @@
     "name":        "uica-stack",
     "homepage":    "https://github.com/msg-systems/uica-stack",
     "description": "User Interface Component Architecture (UICA) Stack",
-    "version":     "0.10.1",
+    "version":     "0.10.2",
     "license":     "MIT",
     "author": {
         "name":    "Jochen Hoertreiter",
@@ -26,7 +26,7 @@
         "url":  "https://github.com/msg-systems/uica-stack/issues"
     },
     "dependencies": {
-        "lodash":               "4.17.4",
+        "lodash":               "4.17.5",
         "jquery":               "2.2.4",
         "js-htmlencode":        "0.3.0",
         "console-polyfill":     "0.3.0",
@@ -51,7 +51,7 @@
         "bluebird":             "3.5.1",
         "socket.io-client":     "1.5.1",
         "sprintfjs":            "1.2.7",
-        "codingpolicyjs":       "0.1.8",
+        "codingpolicyjs":       "1.0.0",
         "ast-traverse":         "0.1.1",
         "glob":                 "7.1.2",
         "animate.css":          "3.5.2",
@@ -59,8 +59,8 @@
     },
     "devDependencies": {
         "delivery-packer":      "0.2.0",
-        "grunt":                "1.0.1",
-        "upd":                  "1.2.16"
+        "grunt":                "1.0.2",
+        "upd":                  "1.2.17"
     },
     "engines": {
         "node":                 ">=0.10.0"
