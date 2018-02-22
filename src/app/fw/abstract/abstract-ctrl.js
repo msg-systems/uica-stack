@@ -2,7 +2,7 @@ ComponentJS.ns("app.fw.abstract");
 app.fw.abstract.ctrl = ComponentJS.clazz({
     mixin: [
         ComponentJS.marker.controller,
-        // handling errors, that occure when calling a backend service
+        // handling errors, that occur when calling a backend service
         app.fw.trait.abstract.serviceError.ctrl
     ],
     dynamics: {
@@ -23,7 +23,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
             //    S E R V I C E   M E T H O D S
             //
             self.registerAPI("focus", function () {
-                self.model.value("command:focus", true)
+                self.model.value("command:focus", true);
             });
 
             this.registerAPIs();
@@ -88,7 +88,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 }
             };
             subscribeConfig = _.merge(subscribeConfig, params);
-            ComponentJS(self).subscribe(subscribeConfig)
+            ComponentJS(self).subscribe(subscribeConfig);
         },
 
         /**
@@ -110,7 +110,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 }
             };
             subscribeConfig = _.merge(subscribeConfig, params);
-            ComponentJS(self).subscribe(subscribeConfig)
+            ComponentJS(self).subscribe(subscribeConfig);
         },
 
         /**
@@ -141,28 +141,28 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 throw new Error("You are calling service(" + serviceName + ") without the proper arguments. The last argument must be the error callback and must be a function.");
             }
             var remainingArguments = Array.prototype.slice.call(arguments, 1, -2); // remaining arguments without eventname, successCB und errorCB
-            var serviceArguments = [].concat(remainingArguments)
+            var serviceArguments = [].concat(remainingArguments);
             serviceArguments.push(function successWrapper() {
                 try {
                     if (typeof successCB === "function") {
-                        successCB.apply(self, arguments)
+                        successCB.apply(self, arguments);
                     }
                 } catch (e) {
                     // ignore the ComponentJS lookup error - because the component is dead already and execution of the callback is useless
                     if (e && e.message.indexOf("[ComponentJS]: ERROR: lookup: invalid base component") !== 0) {
-                        throw e
+                        throw e;
                     }
                 }
             })
             serviceArguments.push(function errorWrapper() {
                 try {
                     if (typeof errorCB === "function") {
-                        errorCB.apply(self, arguments)
+                        errorCB.apply(self, arguments);
                     }
                 } catch (e) {
                     // ignore the ComponentJS lookup error - because the component is dead already and execution of the callback is useless
                     if (e && e.message.indexOf("[ComponentJS]: ERROR: lookup: invalid base component") !== 0) {
-                        throw e
+                        throw e;
                     }
                 }
             })
@@ -219,11 +219,11 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 name: serviceName,
                 spool: ComponentJS(self).state(),
                 func: function () {
-                    return callback.apply(self, arguments)
+                    return callback.apply(self, arguments);
                 }
             };
             config = _.merge(config, params);
-            ComponentJS(self).register(config)
+            ComponentJS(self).register(config);
         },
 
         /**
@@ -245,7 +245,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                             name: modelname,
                             spool: "..:" + ComponentJS(self).state(),
                             func: function () {
-                                callback.apply(self, arguments)
+                                callback.apply(self, arguments);
                             }
                         };
                         config = _.merge(config, params);
@@ -253,8 +253,8 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                     } else {
                         var possibleFields = "";
                         for (var key in modelSpec) {
-                            if (possibleFields.length) possibleFields += ", "
-                            possibleFields += "'" + key + "'"
+                            if (possibleFields.length) possibleFields += ", ";
+                            possibleFields += "'" + key + "'";
                         }
                         throw new Error("own model observer: modelname '" + modelname + "' is not defined in the own model. Possible fields: " + possibleFields);
                     }
@@ -286,7 +286,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                             name: modelname,
                             spool: "..:" + ComponentJS(self).state(),
                             func: function () {
-                                callback.apply(self, arguments)
+                                callback.apply(self, arguments);
                             }
                         };
                         config = _.merge(config, params);
@@ -312,7 +312,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
             var opts = { state: "created", sync: true };
             if (typeof  callback === "function") {
                 opts.func = function () {
-                    callback()
+                    callback();
                 }
             }
             component.state(opts);
@@ -331,10 +331,10 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 var opts = { state: component.parent().state(), sync: true };
                 if (typeof  callback === "function") {
                     opts.func = function () {
-                        callback()
+                        callback();
                     }
                 }
-                component.state(opts)
+                component.state(opts);
             }
         },
 
@@ -354,7 +354,6 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
         },
 
         prepareData: function () {
-
         }
 
     }
