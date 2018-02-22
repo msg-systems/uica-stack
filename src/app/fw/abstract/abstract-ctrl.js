@@ -26,6 +26,7 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 self.model.value("command:focus", true)
             });
 
+            this.registerAPIs();
         },
 
         destroy: function () {
@@ -38,6 +39,11 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
         },
 
         prepare: function () {
+            this.subscribeForParentEvents();
+            this.subscribeForChildEvents();
+            this.observeParentModels();
+            this.observeOwnModels();
+            this.prepareData();
         },
 
         cleanup: function () {
@@ -330,6 +336,25 @@ app.fw.abstract.ctrl = ComponentJS.clazz({
                 }
                 component.state(opts)
             }
+        },
+
+        registerAPIs: function () {
+        },
+
+        observeOwnModels: function () {
+        },
+
+        observeParentModels: function () {
+        },
+
+        subscribeForParentEvents: function () {
+        },
+
+        subscribeForChildEvents: function () {
+        },
+
+        prepareData: function () {
+
         }
 
     }
