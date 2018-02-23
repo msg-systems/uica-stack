@@ -4,6 +4,6 @@
 ##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
 ##
 register:
-  spa-fw.htmlencode:
+  uica.polyfill.htmlencode:
     JS:
     - ../../node_modules/js-htmlencode/src/htmlencode.js

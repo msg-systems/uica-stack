@@ -1,4 +1,4 @@
 register:
-  spa-fw.sprintfjs:
+  uica.sprintfjs:
     JS:
     - ../../node_modules/sprintfjs/sprintf.js

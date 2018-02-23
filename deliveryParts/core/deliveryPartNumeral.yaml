@@ -4,7 +4,7 @@
 ##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
 ##
 register:
-  spa-fw.numeral:
+  uica.numeral:
     JS:
     - ../../node_modules/numeral/numeral.js
     - ../../node_modules/numeral/locales/de.js

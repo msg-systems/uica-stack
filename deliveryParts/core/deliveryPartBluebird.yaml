@@ -9,7 +9,7 @@
 ##
 
 register:
-  spa-fw.bluebird:
+  uica.bluebird:
     JS:
       - ../../node_modules/bluebird/js/browser/bluebird.js
 

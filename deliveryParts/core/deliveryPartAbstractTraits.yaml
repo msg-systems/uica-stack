@@ -4,9 +4,9 @@
 ##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
 ##
 register:
-  spa-fw.trait.registerAPIViewWrapper:
+  uica.trait.registerAPIViewWrapper:
     JS:
     - ../../src/app/fw/_trait/abstract/registerAPI/registerAPI-view.js
-  spa-fw.trait.serviceError:
+  uica.trait.serviceError:
     JS:
     - ../../src/app/fw/_trait/abstract/serviceError/serviceError-ctrl.js

@@ -41,8 +41,8 @@ import:
 - {path_to_project_deliverables}/**/*.yaml
 
 build:
-# you might exclude deliverables from uica-framwork if you want/have to (note they all start with spa-fw.)
-- "!spa-fw.componentjs"
+# you might exclude deliverables from uica-stack if you want/have to (note they all start with uica.)
+- "!uica.componentjs"
 # and add proper replacements on your own - just ensure that those alias names are registered
 - {yournamespace}.angularjs
 ```
@@ -395,9 +395,9 @@ It provides a function for all components to read the service-URL from a specifi
 
 
 <h2>Style Mixins</h2>
-The `uica-stack` includes some useful mixins for styling as well. This can be used through importing the file *spa-fw.less* in your .less-files:
+The `uica-stack` includes some useful mixins for styling as well. This can be used through importing the file *uica.less* in your .less-files:
 
-		@import "../../../../node_modules/uica-stack/src/app/spa-fw";
+		@import "../../../../node_modules/uica-stack/src/app/uica";
 
 
 <h2>Mockdata Registry</h2>

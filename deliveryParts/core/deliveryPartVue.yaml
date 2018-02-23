@@ -1,4 +1,7 @@
 register:
-  spa-fw.vue:
+  uica.vue-dev:
     JS:
     - ../../node_modules/vue/dist/vue.js
+  uica.vue:
+    JS:
+    - ../../node_modules/vue/dist/vue.min.js

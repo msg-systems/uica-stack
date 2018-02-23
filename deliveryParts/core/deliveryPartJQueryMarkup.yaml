@@ -1,4 +1,4 @@
 register:
-  spa-fw.jqueryMarkup:
+  uica.jqueryMarkup:
     JS:
     - ../../node_modules/jquery-markup/jquery.markup.js

@@ -4,10 +4,10 @@
 ##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
 ##
 register:
-  spa-fw.componentjs:
+  uica.componentjs:
     JS:
     - ../../node_modules/componentjs/component.js
-  spa-fw.componentjs.abstractComponents:
+  uica.componentjs.abstractComponents:
     JS:
     - ../../src/app/fw/abstract/abstract-ctrl.js
     - ../../src/app/fw/abstract/abstract-model.js
@@ -16,21 +16,21 @@ register:
     - ../../src/app/fw/root/root-model.js
     - ../../src/app/fw/root/root-view.js
     - ../../src/app/fw/sv/sv.js
-  spa-fw.componentjs.debugger:
+  uica.componentjs.debugger:
     JS:
     - ../../node_modules/componentjs/component.plugin.debugger.js
-  spa-fw.componentjs.jquery:
+  uica.componentjs.jquery:
     JS:
     - ../../node_modules/componentjs/component.plugin.jquery.js
-  spa-fw.componentjs.localstorage:
+  uica.componentjs.localstorage:
     JS:
     - ../../node_modules/componentjs/component.plugin.localstorage.js
-  spa-fw.componentjs.values:
+  uica.componentjs.values:
     JS:
     - ../../node_modules/componentjs/component.plugin.values.js
-  spa-fw.componentjs.vue:
+  uica.componentjs.vue:
     JS:
     - ../../node_modules/componentjs/component.plugin.vue.js
-  spa-fw.componentjs.testdrive:
+  uica.componentjs.testdrive:
     JS:
     - ../../node_modules/componentjs/component.plugin.testdrive.js

@@ -1,4 +1,4 @@
 register:
-  spa-fw.handlebars:
+  uica.handlebars:
     JS:
     - ../../node_modules/handlebars/dist/handlebars.js
