@@ -404,3 +404,10 @@ The `uica-stack` includes some useful mixins for styling as well. This can be us
 A mockdata registry is also delivered by the `uica-stack`. To use it, it needs to be required:
 
 		require('uica-stack/mockdata-registry')
+
+<h2>Migration guide to 1.0.0</h2>
+Major changes need to be done in your application if you used versions < 1.0.0. Here is a list of steps that should help you migrating to >=1.0.0:
+
+* delivery parts have been renamed from <code>spa-fw</code> to <code>uica</code>. If your delivery build fails take a look at the output list of available delivery parts.
+* delivery parts holding a polyfill library have earned the prefix <code>uica.polyfill</code> (and maybe lost their old <code>-polyfill</code> suffix). If your delivery build fails take a look at the output list of available delivery parts.
+* Security leaks in jQuery 2.x forced an upgrade to 3.x. This might bring erros to jquery plugins and code in your application. Ensure that all your jQuery related code is working with jQuery >3.0.0 
